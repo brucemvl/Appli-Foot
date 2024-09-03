@@ -2,13 +2,13 @@ import Match from "./Match";
 import React, {useState, useEffect} from "react";
 import "../styles/Tableau.scss"
 
-function Tableau(){
+function Tableau({id}){
     const [team, setTeam] = useState([])
 
      useEffect(()=> {
         const fetchData = ()=>{
             try {
-                 fetch("https://v3.football.api-sports.io/fixtures?league=61&season=2024", {
+                 fetch(`https://v3.football.api-sports.io/fixtures?league=${id}&season=2024`, {
             method: "GET",
              headers: {
                 "x-rapidapi-key": "5ff22ea19db11151a018c36f7fd0213b",
@@ -26,21 +26,10 @@ function Tableau(){
        catch (error){
         console.error("error:", error)
        }};
-       fetchData();}, []
+       fetchData();}, [id]
 
        )
 
-    
-        
-       
-        //.then((data)=> 
-          //  console.log(data.response)
-            //setMatch(data[0].response)
-            
-            //setJournee(data[0].response)
-            //console.log(journee)
-            
-        
 
     return (
         <section>

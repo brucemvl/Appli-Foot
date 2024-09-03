@@ -5,6 +5,7 @@ import './index.css';
 //import App from './App';
 import Header from './components/Header'
 import Home from './Pages/Home';
+import FicheChampionnat from './Pages/FicheChampionnat';
 
 
 ReactDOM.render(
@@ -13,6 +14,7 @@ ReactDOM.render(
         <Header />
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/FicheChampionnat/:id' element={<FicheChampionnat />} />
           </Routes>
       </Router>
   </React.StrictMode>,
