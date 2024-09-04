@@ -1,0 +1,24 @@
+.championnats {
+
+    width: 100%;
+
+    .championnats__liste {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10%;
+        justify-content: center;
+
+        li {
+            list-style-type: none;
+            margin-block: 10%;
+
+            img {
+
+
+            }
+        }
+    }
+
+
+}
+

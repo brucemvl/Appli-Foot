@@ -1,6 +1,6 @@
 import React from "react"
 //import Tableau from "../components/Tableau"
-import Filtre from "../components/Filtres"
+import Filtres from "../components/Filtres"
 
 function Home(){
 
@@ -9,7 +9,7 @@ function Home(){
 
         <div>
 
-            <Filtre />
+            <Filtres />
 
 
        </div>
