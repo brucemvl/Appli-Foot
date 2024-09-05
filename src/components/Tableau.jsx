@@ -41,7 +41,7 @@ function Tableau({id}){
        const [filter, setFilter] = useState("")
 
 console.log(filter)
-console.log(round)
+console.log(round[0])
 
     return (
         <section>
