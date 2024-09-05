@@ -1,6 +1,6 @@
 import "../styles/Match.scss"
 
- function Match({equipeDom, equipeExt, logoDom, logoExt, scoreDom, scoreExt}){
+ function Match({equipeDom, equipeExt, logoDom, logoExt, scoreDom, scoreExt, round}){
 
  
 

@@ -1,9 +1,17 @@
 import Match from "./Match";
 import React, {useState, useEffect} from "react";
 import "../styles/Tableau.scss"
+import Journees from "./Journees";
 
 function Tableau({id}){
     const [team, setTeam] = useState([])
+
+
+    const round = team.reduce(
+        (acc, elem) =>
+            acc.includes(elem.league.round) ? acc : acc.concat(elem.league.round),
+            []
+    )
 
      useEffect(()=> {
         const fetchData = ()=>{
@@ -30,12 +38,17 @@ function Tableau({id}){
 
        )
 
+       const [filter, setFilter] = useState("")
+
+console.log(filter)
+console.log(round)
 
     return (
         <section>
+            <Journees setFilter={setFilter} round={round} filter={filter}/>
             <ul className="tableau">
-                {team.map(element=>
-                <Match equipeDom={element.teams.home.name} equipeExt={element.teams.away.name} logoDom={element.teams.home.logo} logoExt={element.teams.away.logo} scoreDom={element.goals.home} scoreExt={element.goals.away} />
+                {team.map(element=> !filter || filter === element.league.round ?
+                <Match equipeDom={element.teams.home.name} equipeExt={element.teams.away.name} logoDom={element.teams.home.logo} round={element.league.round} logoExt={element.teams.away.logo} scoreDom={element.goals.home} scoreExt={element.goals.away} key={"match" + element.fixture.id} /> : null
 
 )}
             </ul>

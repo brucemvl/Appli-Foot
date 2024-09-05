@@ -11,9 +11,10 @@ return (
     <section className="championnats">
         <ul className="championnats__liste">
            {leagues.map(({name, id, logo}) =>
-       <Link className="lien" to={`/FicheChampionnat/${id}`}
-           key={"lien"+{id}} ><li><img src={logo} alt="Logo du Championnat"/></li></Link>
-        )}
+            <Link className="lien" to={`/FicheChampionnat/${id}`}key={"lien"+id}>
+                <li><img src={logo} alt="Logo du Championnat"/></li>
+            </Link>
+            )}  
         </ul>
     </section>
 )
