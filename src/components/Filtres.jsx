@@ -9,22 +9,31 @@ function Filtres() {
 
     return (
         <section className="competitions">
-            <div className="championnats">
+            <div className="conteneur">
+                <div className="title">
+                <h2>Championnats</h2>
+                </div>
+                <div className="filtres">
                 {championnats.map(({ name, id, logo }) =>
                     <Link className="lien" to={`/FicheChampionnat/${id}`} key={"lien" + id}>
-                        <p>{name}</p>
+                        <h3>{name}</h3>
                         <article><img src={logo} alt="Logo du Championnat" /></article>
                     </Link>
                 )}
+                </div>
             </div>
-            <div className="europe">
-
+            <div className="conteneur">
+                <div className="title">
+                <h2>Competitions Européennes</h2>
+                </div>
+                <div className="filtres">
                 {europe.map(({ name, id, logo }) =>
                     <Link className="lien" to={`/FicheChampionnat/${id}`} key={"lien" + id}>
-                        <p className="europeText">{name}</p>
+                        <h3 className="europeText">{name}</h3>
                         <article><img src={logo} alt="Logo du Championnat" /></article>
                     </Link>
                 )}
+                </div>
 
             </div>
         </section>
