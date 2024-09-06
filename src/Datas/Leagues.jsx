@@ -1,4 +1,4 @@
-export const leagues = [
+export const championnats = [
         {
             "id": 61,
         "name": "Ligue 1",
@@ -44,13 +44,34 @@ export const leagues = [
                 "logo": "https://media.api-sports.io/football/leagues/135.png",
                 "flag": "https://media.api-sports.io/flags/it.svg",
                 "season": 2024,
-            },
+            }
 
+        
+    ]
+
+   export const europe = [
+        
             {
                 "id": 2,
                "name": "UEFA Champions League",
                 "country": "World",
                 "logo": "https://media.api-sports.io/football/leagues/2.png",
+                "season": 2024,
+            },
+
+            {
+                "id": 3,
+                "name": "UEFA Europa League",
+                "country": "World",
+                "logo": "https://media.api-sports.io/football/leagues/3.png",
+                "season": 2024,
+            },
+
+            {
+                "id": 848,
+                "name": "UEFA Europa Conference League",
+                "country": "World",
+                "logo": "https://media.api-sports.io/football/leagues/848.png",
                 "season": 2024,
             }
         
