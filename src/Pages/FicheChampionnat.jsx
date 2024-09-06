@@ -1,5 +1,6 @@
 import Tableau from "../components/Tableau"
 import { useParams } from "react-router-dom"
+import Classement from "../components/Classement";
 //import { leagues } from "../Datas/Leagues";
 
 function FicheChampionnat({setFilter}){
@@ -9,8 +10,10 @@ function FicheChampionnat({setFilter}){
 
 
     return (
-
+        <div>
+        <Classement id={id} />
         <Tableau id={id} setFilter={setFilter}/>
+        </div>
     )
 
 }

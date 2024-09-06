@@ -9,23 +9,49 @@
         justify-content: center;
         background-color: aliceblue;
         gap: 2%;
+        padding-block: 2%;
 
         a {
             width: 15%;
             display: flex;
-            justify-content: center;
-            border: 1px solid;
-            padding-block: 1%;
+            justify-content: flex-start;
+            border: 8px solid darkblue;
+            border-radius: 20px;
+            padding-block-start: 1%;
+            flex-direction: column-reverse;
+            align-items: center;
+            text-decoration: none;
+            height: 13em;
 
             article {
                 display: flex;
                 justify-content: center;
 
-            img {
-                width: 80%;
+                img {
+                    width: 75%;
+                }
             }
-        }
+
+            p {
+                color: white;
+                background-color: black;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .europeText {
+                color: white;
+                background-color: black;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-block: 0.8em;
+                height: 3em;
+                text-align: center;
+            }
         }
     }
 }
-
