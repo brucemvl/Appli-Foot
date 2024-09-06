@@ -4,14 +4,9 @@ import "../styles/Tableau.scss"
 import Journees from "./Journees";
 
 function Tableau({id}){
+
     const [team, setTeam] = useState([])
 
-
-    const round = team.reduce(
-        (acc, elem) =>
-            acc.includes(elem.league.round) ? acc : acc.concat(elem.league.round),
-            []
-    )
 
      useEffect(()=> {
         const fetchData = ()=>{
@@ -38,17 +33,21 @@ function Tableau({id}){
 
        )
 
-       const [filter, setFilter] = useState("")
+       const round = team.reduce(
+        (acc, elem) =>
+            acc.includes(elem.league.round) ? acc : acc.concat(elem.league.round),
+            []
+    )
 
-console.log(filter)
-console.log(round[0])
+       const [filter, setFilter] = useState(round[0])
+
 
     return (
-        <section>
+        <section className="calendrierEtResultats">
             <Journees setFilter={setFilter} round={round} filter={filter}/>
             <ul className="tableau">
                 {team.map(element=> !filter || filter === element.league.round ?
-                <Match equipeDom={element.teams.home.name} equipeExt={element.teams.away.name} logoDom={element.teams.home.logo} round={element.league.round} logoExt={element.teams.away.logo} scoreDom={element.goals.home} scoreExt={element.goals.away} key={"match" + element.fixture.id} /> : null
+                <Match equipeDom={element.teams.home.name} equipeExt={element.teams.away.name} logoDom={element.teams.home.logo} round={element.league.round} logoExt={element.teams.away.logo} scoreDom={element.goals.home} scoreExt={element.goals.away} date={element.fixture.date} key={"match" + element.fixture.id} /> : null
 
 )}
             </ul>

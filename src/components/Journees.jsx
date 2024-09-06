@@ -15,32 +15,37 @@ console.log(filter)
     )
             */
 
-
+const myRef = useRef()
 //const journey = document.querySelector(".head-month")
 const [index, setIndex] = useState(0)
 
-//const plus = ()=> setindex(index + 1)
-//const moins = ()=> setIndex(index - 1)
-
 const filtrageNext = () => {
-    setFilter(round[index])
+    //setFilter(journey.textContent)
     setIndex(index +1)
 }
 
 const filtragePrev = ()=> {
-    setFilter(round[index])
+   //setFilter(journey.textContent)
     setIndex( index - 1)
 }
 
-console.log(index)
+console.log("index = " + index)
+console.log("filter = " + filter)
+console.log("round index = " + round[index])
+console.log(myRef)
+console.log(myRef.current)
+//console.log(myRef.current.innerText)
+//console.log(myRef.current.innerHTML)
+
+
            return (
 
     <div className="clearfix">
-           <div class="pre-button" onClick={filtragePrev} > prev </div>
+           <div class="pre-button" onClick={filtragePrev} ><i class="fa-solid fa-chevron-left"></i></div>
             <div class="head-info">
-                <div class="head-month" >{round[index]}</div>
+                <select onChange={setFilter(round[index])}><option>Journee {index + 1}</option></select>
             </div>
-            <div class="next-button" onClick={filtrageNext} > next </div>
+            <div class="next-button" onClick={filtrageNext} ><i class="fa-solid fa-chevron-right"></i></div>
             </div>
             )
 }

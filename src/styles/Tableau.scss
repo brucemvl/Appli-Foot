@@ -1,5 +1,26 @@
+
+.calendrierEtResultats {
+
+    background-color: aliceblue;
+    border-radius: 5px;
+    margin: 2%;
+    padding: 2%;
+
 .tableau {
     display: flex;
     flex-direction: column;
     gap: 3%;
+    padding-inline: 1%;
+}
+
+.clearfix {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+
+     .head-info select {
+        border: none;
+        appearance: unset;
+    }
+}
 }
