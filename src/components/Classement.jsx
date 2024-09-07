@@ -16,9 +16,9 @@ function Classement({id}){
         })
 .then((response)=> response.json()) 
 .then((json)=>{
-    console.log(json.response)
+    console.log(json.response[0].league.standings[0])
 
-    setTab(json.response.league.standings)
+    setTab(json.response[0].league.standings[0])
 })      
         
        }
@@ -35,7 +35,10 @@ function Classement({id}){
         <section className="classement">
             <ul>
                 {tab.map((element)=>
-                <li>{element.league.standings}</li>
+                <li className="equipe">
+                    <div>{element.rank}</div>
+                    <img src={element.team.logo} />
+                    <div>{element.team.name}</div></li>
                 )}
             </ul>
 

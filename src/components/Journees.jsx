@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState } from "react"
 
 function Journees({setFilter, filter, round}){
 
@@ -15,7 +15,7 @@ console.log(filter)
     )
             */
 
-const myRef = useRef()
+//const myRef = useRef()
 //const journey = document.querySelector(".head-month")
 const [index, setIndex] = useState(0)
 
@@ -27,13 +27,14 @@ const filtrageNext = () => {
 const filtragePrev = ()=> {
    //setFilter(journey.textContent)
     setIndex( index - 1)
+    console.log("jai clic")
 }
 
 console.log("index = " + index)
 console.log("filter = " + filter)
 console.log("round index = " + round[index])
-console.log(myRef)
-console.log(myRef.current)
+//console.log(myRef)
+//console.log(myRef.current)
 //console.log(myRef.current.innerText)
 //console.log(myRef.current.innerHTML)
 

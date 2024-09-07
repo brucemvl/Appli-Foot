@@ -11,7 +11,8 @@ function FicheChampionnat({setFilter}){
 
     return (
         <div>
-        <Classement id={id} />
+                    <Classement id={id} />
+
         <Tableau id={id} setFilter={setFilter}/>
         </div>
     )
