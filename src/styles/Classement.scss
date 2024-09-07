@@ -1,0 +1,26 @@
+.classement {
+
+    width: 50%;
+
+.barre {
+    display: grid;
+    grid-template-columns: 8% 50% 8% 8% ;
+    justify-items: center;
+    padding-inline-start: 40px;
+}
+
+
+.equipe {
+    display: grid;
+    grid-template-columns: 8% 10% 40% 8% 8%;
+    align-items: center;
+    border-bottom: 1px solid black;
+    justify-items: center;
+    padding-block: 0.5%;
+
+    img {
+        width: 2em;
+        height: 2em;
+    }
+}
+}

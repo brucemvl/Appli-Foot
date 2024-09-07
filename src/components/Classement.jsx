@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "../styles/Classement.scss"
 
 function Classement({id}){
 
@@ -33,12 +34,21 @@ function Classement({id}){
 
        return (
         <section className="classement">
+            <div className="barre">
+                <div>Rang</div>
+                <div>Equipe</div>
+                <div>MJ</div>
+                <span>Points</span>
+            </div>
             <ul>
                 {tab.map((element)=>
                 <li className="equipe">
                     <div>{element.rank}</div>
-                    <img src={element.team.logo} />
-                    <div>{element.team.name}</div></li>
+                    <img src={element.team.logo} alt="logo equipe" />
+                    <div>{element.team.name}</div>
+                    <div>{element.all.played}</div>
+                    <span>{element.points}</span>
+                    </li>
                 )}
             </ul>
 
