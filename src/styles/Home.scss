@@ -43,3 +43,26 @@
         }
     }
 }
+
+@media (max-width: 767px) {
+    .blocpage {
+        .banner {
+            height: 8em;
+
+            img {
+                object-position: 0 -25px;
+            }
+
+            .banner__text {
+
+                h1 {
+                    font-size: 1em;
+                }
+
+                h2 {
+                    font-size: 0.6em;
+                }
+            }
+        }
+    }
+}

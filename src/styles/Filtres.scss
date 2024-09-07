@@ -85,14 +85,16 @@
 }
 
 @media (max-width: 767px){
+
 .competitions {
     .conteneur {
         align-items: center;
 
         .title {
-            width: 10em;
+            width: 16em;
             height: 2.5em;
             padding: 2px;
+            margin-top: 4%;
         }
 
         .filtres {
@@ -105,6 +107,11 @@
 
                 h4 {
                     font-size: 0.8em;
+                }
+
+                .europeText {
+                    margin-block-start: 0.3em;
+                    font-size: 0.64em;
                 }
 
             }
