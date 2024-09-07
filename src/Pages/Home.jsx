@@ -1,14 +1,15 @@
 import React from "react"
-//import Tableau from "../components/Tableau"
+import banner from "../assets/banner.jpg"
 import Filtres from "../components/Filtres"
+import "../styles/Home.scss"
 
 function Home(){
 
     return (
 
 
-        <div>
-
+        <div className="blocpage">
+             <div className="banner"><img src={banner}/><div className="banner__text"> <h1>100% FOOT</h1><h2>Toutes vos infos Football en un clic</h2></div></div>
             <Filtres />
 
 

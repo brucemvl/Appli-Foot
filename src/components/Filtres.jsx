@@ -11,12 +11,12 @@ function Filtres() {
         <section className="competitions">
             <div className="conteneur">
                 <div className="title">
-                <h2>Championnats</h2>
+                <h3>Championnats</h3>
                 </div>
                 <div className="filtres">
                 {championnats.map(({ name, id, logo }) =>
                     <Link className="lien" to={`/FicheChampionnat/${id}`} key={"lien" + id}>
-                        <h3>{name}</h3>
+                        <h4>{name}</h4>
                         <article><img src={logo} alt="Logo du Championnat" /></article>
                     </Link>
                 )}
@@ -24,12 +24,12 @@ function Filtres() {
             </div>
             <div className="conteneur">
                 <div className="title">
-                <h2>Competitions Européennes</h2>
+                <h3>Competitions Européennes</h3>
                 </div>
                 <div className="filtres">
                 {europe.map(({ name, id, logo }) =>
                     <Link className="lien" to={`/FicheChampionnat/${id}`} key={"lien" + id}>
-                        <h3 className="europeText">{name}</h3>
+                        <h4 className="europeText">{name}</h4>
                         <article><img src={logo} alt="Logo du Championnat" /></article>
                     </Link>
                 )}

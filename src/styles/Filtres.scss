@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 5em;
     padding: 2%;
+    width: 100%;
 
     .conteneur {
         display: flex;
@@ -55,19 +56,19 @@
                 }
             }
 
-            h3 {
+            h4 {
                 color: white;
-                background-color: black;
+                background-color: #19721b;
                 width: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 height: 2em;
+                margin-block-end: 0.5em;
             }
 
             .europeText {
                 color: white;
-                background-color: black;
                 width: 100%;
                 display: flex;
                 justify-content: center;
