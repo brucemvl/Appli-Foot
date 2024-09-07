@@ -5,9 +5,9 @@ import logo from "../assets/logoblanc.png"
 
 function Header() {
     return (
-    <div className="header">
+    <header>
         <img src={logo} alt="logo"/>
-    </div>
+    </header>
     )
 }
 

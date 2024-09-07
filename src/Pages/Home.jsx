@@ -9,7 +9,7 @@ function Home(){
 
 
         <div className="blocpage">
-             <div className="banner"><img src={banner}/><div className="banner__text"> <h1>100% FOOT</h1><h2>Toutes vos infos Football en un clic</h2></div></div>
+             <div className="banner"><img src={banner} alt="players" /><div className="banner__text"> <h1>100% FOOT</h1><h2>Toutes vos infos Football en un clic</h2></div></div>
             <Filtres />
 
 
