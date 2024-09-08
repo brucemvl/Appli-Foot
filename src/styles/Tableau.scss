@@ -1,26 +1,25 @@
-
 .calendrierEtResultats {
-
-    background-color: aliceblue;
+    background: linear-gradient(180deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgb(246 246 246 / 50%) 100%);
+    background-color: lightsteelblue;
     border-radius: 5px;
     margin: 2%;
     padding: 2%;
 
-.tableau {
-    display: flex;
-    flex-direction: column;
-    gap: 3%;
-    padding-inline: 1%;
-}
-
-.clearfix {
-    display: flex;
-    justify-content: center;
-    gap: 5%;
-
-     .head-info select {
-        border: none;
-        appearance: unset;
+    .tableau {
+        display: flex;
+        flex-direction: column;
+        gap: 3%;
+        padding-inline: 1%;
     }
-}
+
+    .clearfix {
+        display: flex;
+        justify-content: center;
+        gap: 5%;
+
+        .head-info select {
+            border: none;
+            appearance: unset;
+        }
+    }
 }

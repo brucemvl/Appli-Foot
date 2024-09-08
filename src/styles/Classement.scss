@@ -1,26 +1,80 @@
-.classement {
+.classementEtStats {
+    display: flex;
+    gap: 2%;
 
-    width: 50%;
+    .classement {
+        width: 60%;
+        background: linear-gradient(180deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgb(246 246 246 / 50%) 100%);
+        background-color: aliceblue;
+        padding: 2%;
 
-.barre {
-    display: grid;
-    grid-template-columns: 8% 50% 8% 8% ;
-    justify-items: center;
-    padding-inline-start: 40px;
-}
+        .barre {
+            display: grid;
+            grid-template-columns: 8% 50% 8% 8%;
+            justify-items: center;
+            margin-inline-start: 40px;
+            background: linear-gradient(180deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgb(246 246 246 / 50%) 100%);
+            background-color: lightsteelblue;
+        }
 
 
-.equipe {
-    display: grid;
-    grid-template-columns: 8% 10% 40% 8% 8%;
-    align-items: center;
-    border-bottom: 1px solid black;
-    justify-items: center;
-    padding-block: 0.5%;
+        .equipe {
+            display: grid;
+            grid-template-columns: 8% 10% 40% 8% 8%;
+            align-items: center;
+            border-bottom: 1px solid black;
+            justify-items: center;
+            padding-block: 0.5%;
+            background: linear-gradient(180deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgb(246 246 246 / 50%) 100%);
 
-    img {
-        width: 2em;
-        height: 2em;
+            img {
+                width: 2em;
+                height: 2em;
+            }
+        }
     }
-}
+
+
+    .buteurs {
+
+        width: 35%;
+        background: linear-gradient(180deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgb(246 246 246 / 50%) 100%);
+        background-color: aliceblue;
+        padding: 2%;
+
+        .barreButeurs {
+            display: grid;
+            grid-template-columns: 64% 14% 18%;
+            justify-items: center;
+            background: linear-gradient(180deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgb(246 246 246 / 50%) 100%);
+            background-color: lightsteelblue;
+        }
+
+        ul {
+            padding-inline-start: 0;
+
+
+            .joueur {
+                align-items: center;
+                background: linear-gradient(180deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgb(246 246 246 / 50%) 100%);
+                display: grid;
+                grid-template-columns: 10% 14% 45% 16% 8%;
+                padding-inline-start: 10px;
+
+                img {
+                    width: 2em;
+                    height: 2em;
+                }
+
+            }
+        }
+    }
+
+    span {
+        font-weight: bold;
+    }
+
+    p {
+        font-weight: 500;
+    }
 }

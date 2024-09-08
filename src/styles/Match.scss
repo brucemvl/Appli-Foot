@@ -5,48 +5,45 @@
     align-items: center;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(10, 10, 10, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(0, 0, 0, 0.5) 100%);
 
-    .match__equipeDom{
-
-    }
+    .match__equipeDom {}
 
     img {
         height: 2.5em;
         width: 2.5em;
 
     }
-    
+
 
     .match__score {
         display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+        width: 100%;
+        justify-content: space-evenly;
 
-    span {
-        display: flex;
-    height: 2em;
-    width: 2em;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    border-radius: 5px;
-    }
-
-    .winner {
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(10, 10, 10, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(0, 0, 0, 0.5) 100%);
-        background-color: #49ff5e;
+        span {
+            display: flex;
+            height: 2em;
+            width: 2em;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border-radius: 5px;
         }
 
-    .looser {
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(10, 10, 10, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(0, 0, 0, 0.5) 100%);
-        background-color: red;    
-    }
+        .winner {
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgb(255 255 255 / 0%) 42%, rgb(0 0 0 / 21%) 99.99%, rgb(255 255 255 / 50%) 100%);
+            background-color: #32b642;
+        }
 
-    .nul {
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(10, 10, 10, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(0, 0, 0, 0.5) 100%);
-        background-color: grey;
-    }
+        .looser {
+            background: linear-gradient(0deg, rgb(0 0 0 / 0%) 0%, rgba(10, 10, 10, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(0, 0, 0, 0.5) 100%);
+            background-color: #ff2e2e;
+        }
+
+        .nul {
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(10, 10, 10, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(0, 0, 0, 0.5) 100%);
+            background-color: #919090;
+        }
 
     }
 
 }
-

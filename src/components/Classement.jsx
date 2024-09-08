@@ -77,15 +77,30 @@ function Classement({id}){
                     <li className="equipe">
                         <div>{element.rank}</div>
                         <img src={element.team.logo} alt="logo equipe" />
-                        <div>{element.team.name}</div>
+                        <p>{element.team.name}</p>
                         <div>{element.all.played}</div>
                         <span>{element.points}</span>
                         </li>
                     )}
                 </ul>
             </article>
-            <aside>
+            <aside className="buteurs">
+            <div className="barreButeurs">
+                    <div>Joueur</div>
+                    <div>Buts</div>
+                    <div>Matchs</div>
+                </div>
                 <ul>
+                {joueurs.map((element)=> 
+                    <li className="joueur">
+                        <img src={element.statistics[0].team.logo} alt="logo team"/>
+                        <img src={element.player.photo} alt="player"/>
+                        <p>{element.player.name}</p>
+                        <span>{element.statistics[0].goals.total}</span>
+                        <div>{element.statistics[0].games.appearences}</div>
+
+                    </li>
+                    )}
                 </ul>
             </aside>
 
