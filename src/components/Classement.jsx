@@ -66,10 +66,13 @@ function Classement({id}){
        return (
         <section className="classementEtStats">
             <article className="classement">
+                <h3>Classement</h3>
                 <div className="barre">
                     <div>Rang</div>
                     <div>Equipe</div>
                     <div>MJ</div>
+                    <div>BP</div>
+                    <div>BC</div>
                     <span>Points</span>
                 </div>
                 <ul>
@@ -79,12 +82,15 @@ function Classement({id}){
                         <img src={element.team.logo} alt="logo equipe" />
                         <p>{element.team.name}</p>
                         <div>{element.all.played}</div>
+                        <div>{element.all.goals.for}</div>
+                        <div>{element.all.goals.against}</div>
                         <span>{element.points}</span>
                         </li>
                     )}
                 </ul>
             </article>
             <aside className="buteurs">
+                <h3>Meilleurs Buteurs</h3>
             <div className="barreButeurs">
                     <div>Joueur</div>
                     <div>Buts</div>
@@ -94,7 +100,6 @@ function Classement({id}){
                 {joueurs.map((element)=> 
                     <li className="joueur">
                         <img src={element.statistics[0].team.logo} alt="logo team"/>
-                        <img src={element.player.photo} alt="player"/>
                         <p>{element.player.name}</p>
                         <span>{element.statistics[0].goals.total}</span>
                         <div>{element.statistics[0].games.appearences}</div>

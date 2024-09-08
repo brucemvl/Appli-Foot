@@ -44,6 +44,7 @@ function Tableau({id}){
 
     return (
         <section className="calendrierEtResultats">
+            <h3>Calendrier et Resultats</h3>
             <Journees setFilter={setFilter} round={round} filter={filter}/>
             <ul className="tableau">
                 {team.map(element=> !filter || filter === element.league.round ?

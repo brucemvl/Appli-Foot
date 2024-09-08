@@ -28,8 +28,7 @@ function Filtres() {
                 </div>
                 <div className="filtres">
                 {europe.map(({ name, id, logo }) =>
-                    <Link className="lien" to={`/FicheChampionnat/${id}`} key={"lien" + id}>
-                        <h4 className="europeText">{name}</h4>
+                    <Link className="lienEurope" to={`/FicheChampionnat/${id}`} key={"lien" + id}>
                         <article><img src={logo} alt="Logo du Championnat" /></article>
                     </Link>
                 )}
