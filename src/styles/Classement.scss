@@ -1,6 +1,7 @@
 .classementEtStats {
     display: flex;
     gap: 2%;
+    width: 100%;
 
     h3 {
         background: linear-gradient(0deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgb(255 255 255 / 21%) 99.99%, rgb(255 251 251 / 50%) 100%);
@@ -9,7 +10,7 @@
         text-align: center;
         width: 45%;
         border-radius: 15px
-        }
+    }
 
     .classement {
         width: 60%;
@@ -53,7 +54,7 @@
 
     .buteurs {
 
-        width: 35%;
+        width: 40%;
         background: linear-gradient(180deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgb(246 246 246 / 50%) 100%);
         background-color: aliceblue;
         padding: 2%;
@@ -79,12 +80,33 @@
                 align-items: center;
                 background: linear-gradient(180deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgb(246 246 246 / 50%) 100%);
                 display: grid;
-                grid-template-columns: 10% 54% 14% 18%;
+                grid-template-columns: 64% 14% 18%;
                 padding-inline-start: 10px;
+                justify-items: center;
 
-                img {
-                    width: 2em;
-                    height: 2em;
+                .joueur__infos {
+                    display: flex;
+    flex-direction: column;
+    /* justify-self: center; */
+    width: 100%;
+    margin-block: 3%;
+
+                    .joueur__infos__equipe {
+                        display: flex;
+                        gap: 2%;
+                        align-items: center;
+
+                         img {
+                            width: 1em;
+                            height: 1em;
+                        }
+
+                        p {
+                            font-weight: 400;
+    font-size: 0.8em;
+    margin-block: 0;
+                        }
+                    }
                 }
 
             }

@@ -99,8 +99,13 @@ function Classement({id}){
                 <ul>
                 {joueurs.map((element)=> 
                     <li className="joueur">
+                        <div className="joueur__infos">
+                        <span>{element.player.name}</span>
+                        <div className="joueur__infos__equipe">
                         <img src={element.statistics[0].team.logo} alt="logo team"/>
-                        <p>{element.player.name}</p>
+                        <p>{element.statistics[0].team.name}</p>
+                        </div>                      
+                        </div>
                         <span>{element.statistics[0].goals.total}</span>
                         <div>{element.statistics[0].games.appearences}</div>
 

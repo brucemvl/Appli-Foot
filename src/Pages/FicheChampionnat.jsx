@@ -1,19 +1,19 @@
 import Tableau from "../components/Tableau"
 import { useParams } from "react-router-dom"
 import Classement from "../components/Classement";
-//import { leagues } from "../Datas/Leagues";
+import "../styles/FicheChampionnat.scss"
 
-function FicheChampionnat({setFilter}){
+
+function FicheChampionnat({ setFilter }) {
 
     const { id } = useParams();
     //const league = leagues.find((league) => league.id === id)
 
 
     return (
-        <div>
-                    <Classement id={id} />
-
-        <Tableau id={id} setFilter={setFilter}/>
+        <div className="blocpage">
+            <Classement id={id} />
+            <Tableau id={id} setFilter={setFilter} />
         </div>
     )
 
