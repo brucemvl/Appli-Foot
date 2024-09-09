@@ -73,7 +73,7 @@ function Classement({id}){
                     <div>MJ</div>
                     <div>BP</div>
                     <div>BC</div>
-                    <span>Points</span>
+                    <div>Points</div>
                 </div>
                 <ul>
                     {tab.map((element)=>
