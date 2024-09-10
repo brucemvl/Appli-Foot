@@ -5,7 +5,13 @@ function Classement({id}){
 
     const [tab, setTab] = useState([])
     const [joueurs, setJoueurs] = useState([])
+    const [isOpen, setIsOpen] = useState(false)
+    const [rotate, setRotation] = useState(true)
 
+    const openContent = ()=>{
+        setIsOpen(!isOpen)
+        setRotation(!rotate)
+    }
 
     useEffect(()=> {
         const fetchData = ()=>{
@@ -90,7 +96,9 @@ function Classement({id}){
                 </ul>
             </article>
             <aside className="buteurs">
-                <h3>Meilleurs Buteurs</h3>
+               <div className="titreCollapse"><h3>Meilleurs Buteurs</h3> {rotate ? <i class="fa-solid fa-chevron-down" onClick={openContent}></i> : <i class="fa-solid fa-chevron-down active" onClick={openContent}></i> }</div>
+                {isOpen &&
+                <div className="dropdown">
             <div className="barreButeurs">
                     <div>Joueur</div>
                     <div>Buts</div>
@@ -112,6 +120,8 @@ function Classement({id}){
                     </li>
                     )}
                 </ul>
+                </div>
+}
             </aside>
 
 

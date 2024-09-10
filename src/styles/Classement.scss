@@ -3,15 +3,6 @@
     gap: 2%;
     width: 100%;
 
-    h3 {
-        background: linear-gradient(0deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgb(255 255 255 / 21%) 99.99%, rgb(255 251 251 / 50%) 100%);
-        background-color: midnightblue;
-        color: white;
-        text-align: center;
-        width: 45%;
-        border-radius: 10px
-    }
-
     .classement {
         width: 60%;
         background: linear-gradient(180deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgb(246 246 246 / 50%) 100%);
@@ -21,6 +12,15 @@
         flex-direction: column;
         align-items: center;
         border-radius: 5px;
+
+        h3 {
+            background: linear-gradient(0deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgb(255 255 255 / 21%) 99.99%, rgb(255 251 251 / 50%) 100%);
+            background-color: midnightblue;
+            color: white;
+            text-align: center;
+            width: 45%;
+            border-radius: 10px
+        }
 
         .barre {
             display: grid;
@@ -63,6 +63,22 @@
         flex-direction: column;
         align-items: center;
         border-radius: 5px;
+        height: 100%;
+
+        .titreCollapse {
+            background: linear-gradient(0deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgb(255 255 255 / 21%) 99.99%, rgb(255 251 251 / 50%) 100%);
+            background-color: midnightblue;
+            color: white;
+            text-align: center;
+            width: 45%;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10%;
+            height: 2em;
+            padding-inline: 5%;
+        }
 
         .barreButeurs {
             display: grid;
@@ -128,4 +144,20 @@
     ul {
         margin-top: 0.5em;
     }
+}
+
+.dropdown {
+    width: 100%;
+}
+
+.fa-chevron-down {
+    transition: transform 1s cubic-bezier(1, -1.3, .46, 1.82);
+&:hover{
+    cursor: pointer;
+}
+}
+
+.active {
+    transform: rotate(180deg);
+    color: white;
 }
