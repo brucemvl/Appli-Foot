@@ -64,6 +64,7 @@
         align-items: center;
         border-radius: 5px;
         height: 100%;
+        
 
         .titreCollapse {
             background: linear-gradient(0deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgb(255 255 255 / 21%) 99.99%, rgb(255 251 251 / 50%) 100%);
@@ -148,10 +149,13 @@
 
 .dropdown {
     width: 100%;
+    margin-top: 4%;
+    transition-duration: 0.6s;
+    animation: slidein 0.6s ease-in-out;
 }
 
 .fa-chevron-down {
-    transition: transform 1s cubic-bezier(1, -1.3, .46, 1.82);
+    transition: transform 0.6s cubic-bezier(1, -1.3, .46, 1.82);
 &:hover{
     cursor: pointer;
 }
@@ -160,4 +164,20 @@
 .active {
     transform: rotate(180deg);
     color: white;
+}
+
+@keyframes slidein {
+     0%{
+        transform: translateY(-80%);
+display: none;        
+    }
+
+    80%{
+display: none; }
+
+    100% {
+height: 100%;
+    }
+
+
 }
