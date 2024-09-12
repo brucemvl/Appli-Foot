@@ -3,8 +3,6 @@ import "../styles/Classement.scss"
 
 function Classement({id}){
 
-    const [tab, setTab] = useState([])
-    const [joueurs, setJoueurs] = useState([])
     const [isOpen, setIsOpen] = useState(false)
     const [rotate, setRotation] = useState(true)
 
@@ -12,6 +10,11 @@ function Classement({id}){
         setIsOpen(!isOpen)
         setRotation(!rotate)
     }
+
+    //CLASSEMENT
+
+    const [tab, setTab] = useState([])
+
 
     useEffect(()=> {
         const fetchData = ()=>{
@@ -40,10 +43,12 @@ function Classement({id}){
 
        console.log(tab)
 
+       //CLASSEMENT BUTEURS
 
+       const [buteurs, setButeurs] = useState([])
         
         useEffect(()=> {
-            const fetchStats = ()=>{
+            const fetchButeurs = ()=>{
                 try {
                      fetch(`https://v3.football.api-sports.io/players/topscorers?league=${id}&season=2024`, {
                 method: "GET",
@@ -54,9 +59,10 @@ function Classement({id}){
             })
     .then((response)=> response.json()) 
     .then((json)=>{
-        console.log(json.response)
+        
+        console.log(json.response.slice(0,10))
     
-        setJoueurs(json.response)
+        setButeurs(json.response.slice(0,10))
 
     })      
             
@@ -64,10 +70,40 @@ function Classement({id}){
            catch (error){
             console.error("error:", error)
            }};
-           fetchStats();}, [id]
+           fetchButeurs();}, [id]
     
            )
 
+           //CLASSEMENT PASSEURS
+
+           const [passeurs, setPasseurs] = useState([])
+
+           useEffect(()=> {
+            const fetchPasseurs = ()=>{
+                try {
+                     fetch(`https://v3.football.api-sports.io/players/topassists?league=${id}&season=2024`, {
+                method: "GET",
+                 headers: {
+                    "x-rapidapi-key": "5ff22ea19db11151a018c36f7fd0213b",
+                    "x-rapidapi-host": "v3.football.api-sports.io",
+                }
+            })
+    .then((response)=> response.json()) 
+    .then((json)=>{
+        
+        console.log(json.response.slice(0,10))
+    
+        setPasseurs(json.response.slice(0,10))
+
+    })      
+            
+           }
+           catch (error){
+            console.error("error:", error)
+           }};
+           fetchPasseurs();}, [id]
+    
+           )
 
        return (
         <section className="classementEtStats">
@@ -95,8 +131,9 @@ function Classement({id}){
                     )}
                 </ul>
             </article>
-            <aside className="buteurs">
-               <div className="titreCollapse"><h3>Meilleurs Buteurs</h3> {rotate ? <i class="fa-solid fa-chevron-down" onClick={openContent}></i> : <i class="fa-solid fa-chevron-down active" onClick={openContent}></i> }</div>
+            <div className="statistiques">
+            <aside className="statistiques__joueurs">
+               <div className="titreCollapse"><img width="64" height="64" className="titreCollapse__logo" src="https://img.icons8.com/pastel-glyph/64/FFFFFF/football-goal.png" alt="football-goal"/><h3>Meilleurs Buteurs</h3> {rotate ? <i class="fa-solid fa-chevron-down" onClick={openContent}></i> : <i class="fa-solid fa-chevron-down active" onClick={openContent}></i> }</div>
                 {isOpen &&
                 <div className="dropdown">
             <div className="barreButeurs">
@@ -105,8 +142,8 @@ function Classement({id}){
                     <div>Matchs</div>
                 </div>
                 <ul>
-                {joueurs.map((element)=> 
-                    <li className="joueur">
+                {buteurs.map((element)=> 
+                    <li className="buteur">
                         <div className="joueur__infos">
                         <span>{element.player.name}</span>
                         <div className="joueur__infos__equipe">
@@ -123,6 +160,36 @@ function Classement({id}){
                 </div>
 }
             </aside>
+
+            <aside className="statistiques__joueurs">
+               <div className="titreCollapse"><img width="50" height="50" className="titreCollapse__logo" src="https://img.icons8.com/ios-filled/50/FFFFFF/goal--v1.png" alt="goal--v1"/><h3>Meilleurs Passeurs</h3> {rotate ? <i class="fa-solid fa-chevron-down" onClick={openContent}></i> : <i class="fa-solid fa-chevron-down active" onClick={openContent}></i> }</div>
+                {isOpen &&
+                <div className="dropdown">
+            <div className="barrePasseurs">
+                    <div>Joueur</div>
+                    <div>Passes dec.</div>
+                    <div>Matchs</div>
+                </div>
+                <ul>
+                {passeurs.map((element)=> 
+                    <li className="passeur">
+                        <div className="joueur__infos">
+                        <span>{element.player.name}</span>
+                        <div className="joueur__infos__equipe">
+                        <img src={element.statistics[0].team.logo} alt="logo team"/>
+                        <p>{element.statistics[0].team.name}</p>
+                        </div>                      
+                        </div>
+                        <span>{element.statistics[0].goals.assists}</span>
+                        <div>{element.statistics[0].games.appearences}</div>
+
+                    </li>
+                    )}
+                </ul>
+                </div>
+}
+            </aside>
+            </div>
 
 
         </section>

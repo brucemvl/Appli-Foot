@@ -12,8 +12,8 @@ function FicheChampionnat({ setFilter }) {
 
     return (
         <div className="blocpage">
-            <Classement id={id} />
             <Tableau id={id} setFilter={setFilter} />
+            <Classement id={id} />
         </div>
     )
 
