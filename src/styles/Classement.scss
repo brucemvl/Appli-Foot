@@ -239,3 +239,57 @@
 
 
 }
+
+@media (max-width: 767px) {
+
+    .classementEtStats {
+        flex-direction: column;
+
+        .classement {
+            width: 100%;
+
+            .barre {
+                font-size: 0.8em;
+            }
+
+            ul {
+                .equipe {
+                    font-size: 0.8em;
+                    padding-block: 0;
+                }
+            }
+        }
+
+        .statistiques {
+            width: 100%;
+
+            .statistiques__joueurs{
+
+            .titreCollapse {
+
+            .titreCollapse__logo {
+                width: 1.2em;
+                height: 1.2em;
+            }
+        }
+    }
+
+        }
+
+        h3 {
+            font-size: 1em;
+        }
+
+        .barreButeurs {
+            font-size: 0.8em;
+        }
+
+        .barrePasseurs {
+            font-size: 0.8em;
+        }
+
+        li {
+            font-size: 0.8em;
+        }
+    }
+}
