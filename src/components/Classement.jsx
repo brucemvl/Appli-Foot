@@ -3,12 +3,19 @@ import "../styles/Classement.scss"
 
 function Classement({id}){
 
-    const [isOpen, setIsOpen] = useState(false)
-    const [rotate, setRotation] = useState(true)
+    const [openButeurs, setOpenButeurs] = useState(false)
+    const [openPasseurs, setOpenPasseurs] = useState(false)
+    const [rotateButeurs, setRotationB] = useState(true)
+    const [rotatePasseurs, setRotationP] = useState(true)
 
-    const openContent = ()=>{
-        setIsOpen(!isOpen)
-        setRotation(!rotate)
+    const collapseButeurs=()=>{
+        setOpenButeurs(!openButeurs)
+        setRotationB(!rotateButeurs)
+    }
+
+    const collapsePasseurs =()=>{
+        setOpenPasseurs(!openPasseurs)
+        setRotationP(!rotatePasseurs)
     }
 
     //CLASSEMENT
@@ -133,8 +140,8 @@ function Classement({id}){
             </article>
             <div className="statistiques">
             <aside className="statistiques__joueurs">
-               <div className="titreCollapse"><img width="64" height="64" className="titreCollapse__logo" src="https://img.icons8.com/pastel-glyph/64/FFFFFF/football-goal.png" alt="football-goal"/><h3>Meilleurs Buteurs</h3> {rotate ? <i class="fa-solid fa-chevron-down" onClick={openContent}></i> : <i class="fa-solid fa-chevron-down active" onClick={openContent}></i> }</div>
-                {isOpen &&
+               <div className="titreCollapse"><img width="64" height="64" className="titreCollapse__logo" src="https://img.icons8.com/pastel-glyph/64/FFFFFF/football-goal.png" alt="football-goal"/><h3>Meilleurs Buteurs</h3> {rotateButeurs ? <i class="fa-solid fa-chevron-down" onClick={collapseButeurs}></i> : <i class="fa-solid fa-chevron-down active" onClick={collapseButeurs}></i> }</div>
+                {openButeurs &&
                 <div className="dropdown">
             <div className="barreButeurs">
                     <div>Joueur</div>
@@ -162,8 +169,8 @@ function Classement({id}){
             </aside>
 
             <aside className="statistiques__joueurs">
-               <div className="titreCollapse"><img width="50" height="50" className="titreCollapse__logo" src="https://img.icons8.com/ios-filled/50/FFFFFF/goal--v1.png" alt="goal--v1"/><h3>Meilleurs Passeurs</h3> {rotate ? <i class="fa-solid fa-chevron-down" onClick={openContent}></i> : <i class="fa-solid fa-chevron-down active" onClick={openContent}></i> }</div>
-                {isOpen &&
+               <div className="titreCollapse"><img width="50" height="50" className="titreCollapse__logo" src="https://img.icons8.com/ios-filled/50/FFFFFF/goal--v1.png" alt="goal--v1"/><h3>Meilleurs Passeurs</h3> {rotatePasseurs ? <i class="fa-solid fa-chevron-down" onClick={collapsePasseurs}></i> : <i class="fa-solid fa-chevron-down active" onClick={collapsePasseurs}></i> }</div>
+                {openPasseurs &&
                 <div className="dropdown">
             <div className="barrePasseurs">
                     <div>Joueur</div>
