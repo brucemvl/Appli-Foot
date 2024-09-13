@@ -10,10 +10,13 @@
 
     .pre-button {
         color: steelblue;
+        font-size: 1.2em;
     }
 
     .next-button {
         color: steelblue;
+        font-size: 1.2em;
+
     }
 
     h3 {
@@ -44,11 +47,13 @@
     .clearfix {
         display: flex;
         justify-content: center;
-        gap: 20%;
+        gap: 30%;
+        align-items: center;
 
         .head-info select {
             border: none;
             appearance: unset;
+            background-color: transparent;
         }
     }
 }
