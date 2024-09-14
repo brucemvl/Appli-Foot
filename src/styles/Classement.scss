@@ -216,7 +216,7 @@
 
 @keyframes slidein {
     0% {
-        transform: translateY(-80%);
+        transform: translateY(-60%);
         opacity: 0;
     }
 
@@ -252,9 +252,14 @@
 
             .barre {
                 font-size: 0.8em;
+                width: 98%;
+                margin-inline: 1%;
             }
 
             ul {
+                width: 98%;
+                margin: 1%;
+
                 .equipe {
                     font-size: 0.8em;
                     padding-block: 0;
@@ -269,6 +274,7 @@
             .statistiques__joueurs{
                 padding: 0%;
                 padding-block: 1%;
+                margin-top: 2%;
 
             .titreCollapse {
 
@@ -276,6 +282,23 @@
                 width: 1.2em;
                 height: 1.2em;
             }
+        }
+
+        .barreButeurs {
+            font-size: 0.8em;
+            width: 98%;
+            margin-inline: 1%;
+        }
+
+        .barrePasseurs {
+            font-size: 0.8em;
+            width: 98%;
+            margin-inline: 1%;
+        }
+
+        ul {
+            width: 98%;
+            margin-inline: 1%;
         }
     }
 
@@ -285,13 +308,6 @@
             font-size: 1em;
         }
 
-        .barreButeurs {
-            font-size: 0.8em;
-        }
-
-        .barrePasseurs {
-            font-size: 0.8em;
-        }
 
         li {
             font-size: 0.8em;
