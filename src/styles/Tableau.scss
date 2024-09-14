@@ -11,11 +11,17 @@
     .pre-button {
         color: steelblue;
         font-size: 1.2em;
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .next-button {
         color: steelblue;
         font-size: 1.2em;
+        &:hover {
+            cursor: pointer;
+        }
 
     }
 
@@ -55,6 +61,7 @@
             appearance: unset;
             background-color: transparent;
             font-family: permanent marker;
+            font-size: 1em;
         }
     }
 }

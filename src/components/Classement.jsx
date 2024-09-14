@@ -5,8 +5,16 @@ function Classement({id}){
 
     const [openButeurs, setOpenButeurs] = useState(false)
     const [openPasseurs, setOpenPasseurs] = useState(false)
+    const [openClassement, setOpenClassement] = useState(false)
     const [rotateButeurs, setRotationB] = useState(true)
     const [rotatePasseurs, setRotationP] = useState(true)
+    const [rotateClassement, setRotationC] = useState(true)
+
+
+    const collapseClassement =()=>{
+        setOpenClassement(!openClassement)
+        setRotationC(!rotateClassement)
+    }
 
     const collapseButeurs=()=>{
         setOpenButeurs(!openButeurs)
@@ -115,14 +123,17 @@ function Classement({id}){
        return (
         <section className="classementEtStats">
             <article className="classement">
-                <h3>Classement</h3>
+            <div className="titreCollapse"><img width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/leaderboard.png" className="titreCollapse__logo" alt="leaderboard"/><h3>Classement</h3> {rotateClassement ? <i class="fa-solid fa-chevron-down" onClick={collapseClassement}></i> : <i class="fa-solid fa-chevron-down active" onClick={collapseClassement}></i> }</div>
+            {openClassement &&
+
+            <div className="dropdown">
                 <div className="barre">
                     <div>Rang</div>
                     <div>Equipe</div>
                     <div>J</div>
                     <div>V</div>
-                    <div>D</div>
                     <div>N</div>
+                    <div>D</div>
                     <div>BP</div>
                     <div>BC</div>
                     <div>Points</div>
@@ -135,14 +146,16 @@ function Classement({id}){
                         <p>{element.team.name}</p>
                         <div>{element.all.played}</div>
                         <div>{element.all.win}</div>
-                        <div>{element.all.lose}</div>
                         <div>{element.all.draw}</div>
+                        <div>{element.all.lose}</div>
                         <div>{element.all.goals.for}</div>
                         <div>{element.all.goals.against}</div>
                         <span>{element.points}</span>
                         </li>
                     )}
                 </ul>
+                </div>
+}
             </article>
             <div className="statistiques">
             <aside className="statistiques__joueurs">

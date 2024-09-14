@@ -3,6 +3,25 @@
     gap: 2%;
     width: 98%;
 
+    .titreCollapse {
+        background: linear-gradient(0deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgb(255 255 255 / 21%) 99.99%, rgb(255 251 251 / 50%) 100%);
+        background-color: midnightblue;
+        color: white;
+        text-align: center;
+        width: 55%;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 2em;
+        padding-inline: 5%;
+
+        .titreCollapse__logo {
+            width: 1.5em;
+            height: 1.5em;
+        }
+    }
+
     .classement {
         width: 60%;
         background: linear-gradient(180deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgb(246 246 246 / 50%) 100%);
@@ -12,15 +31,6 @@
         flex-direction: column;
         align-items: center;
         border-radius: 5px;
-
-        h3 {
-            background: linear-gradient(0deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgb(255 255 255 / 21%) 99.99%, rgb(255 251 251 / 50%) 100%);
-            background-color: midnightblue;
-            color: white;
-            text-align: center;
-            width: 45%;
-            border-radius: 10px
-        }
 
         .barre {
             display: grid;
@@ -70,26 +80,6 @@
             flex-direction: column;
             align-items: center;
             border-radius: 5px;
-
-
-            .titreCollapse {
-                background: linear-gradient(0deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgb(255 255 255 / 21%) 99.99%, rgb(255 251 251 / 50%) 100%);
-                background-color: midnightblue;
-                color: white;
-                text-align: center;
-                width: 55%;
-                border-radius: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                height: 2em;
-                padding-inline: 5%;
-
-                .titreCollapse__logo {
-                    width: 1.5em;
-                    height: 1.5em;
-                }
-            }
 
             .barreButeurs {
                 display: grid;
@@ -252,9 +242,13 @@
 
     .classementEtStats {
         flex-direction: column;
+        width: 100%;
+        margin: 2%;
 
         .classement {
             width: 100%;
+            padding: 0%;
+            padding-block: 1%;
 
             .barre {
                 font-size: 0.8em;
@@ -269,10 +263,12 @@
         }
 
         .statistiques {
-            width: 98%;
-            margin: 1%;
+            width: 100%;
+            margin: 0;
 
             .statistiques__joueurs{
+                padding: 0%;
+                padding-block: 1%;
 
             .titreCollapse {
 
