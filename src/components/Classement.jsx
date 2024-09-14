@@ -119,7 +119,10 @@ function Classement({id}){
                 <div className="barre">
                     <div>Rang</div>
                     <div>Equipe</div>
-                    <div>MJ</div>
+                    <div>J</div>
+                    <div>V</div>
+                    <div>D</div>
+                    <div>N</div>
                     <div>BP</div>
                     <div>BC</div>
                     <div>Points</div>
@@ -131,6 +134,9 @@ function Classement({id}){
                         <img src={element.team.logo} alt="logo equipe" />
                         <p>{element.team.name}</p>
                         <div>{element.all.played}</div>
+                        <div>{element.all.win}</div>
+                        <div>{element.all.lose}</div>
+                        <div>{element.all.draw}</div>
                         <div>{element.all.goals.for}</div>
                         <div>{element.all.goals.against}</div>
                         <span>{element.points}</span>
