@@ -1,7 +1,7 @@
 import Tableau from "../components/Tableau"
 import { useParams } from "react-router-dom"
-import Classement from "../components/Classement";
 import "../styles/FicheChampionnat.scss"
+import ClassementChampionnat from "../components/ClassementChampionnat";
 
 
 function FicheChampionnat({ setFilter }) {
@@ -13,7 +13,7 @@ function FicheChampionnat({ setFilter }) {
     return (
         <div className="blocpage">
             <Tableau id={id} setFilter={setFilter} />
-            <Classement id={id} />
+            <ClassementChampionnat id={id} />
         </div>
     )
 

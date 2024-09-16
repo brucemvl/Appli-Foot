@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "../styles/Classement.scss"
 
-function Classement({id}){
+function ClassementEurope({id}) {
 
     const [openButeurs, setOpenButeurs] = useState(false)
     const [openPasseurs, setOpenPasseurs] = useState(false)
@@ -220,6 +220,7 @@ function Classement({id}){
 
         </section>
        )
+
 }
 
-export default Classement
+export default ClassementEurope

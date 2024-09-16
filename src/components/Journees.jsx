@@ -2,41 +2,18 @@ import { useState } from "react"
 
 function Journees({setFilter, filter, round}){
 
-  /*  
-console.log(filter)
-    return (
 
-        <div>
-                <ul>
-                    {round.map((element)=>
-                    <li key={"journee" + element} value={element} onClick={()=> setFilter(element)} >{element}</li>)}
-                </ul>
-            </div>
-    )
-            */
-
-//const myRef = useRef()
-//const journey = document.querySelector(".head-month")
-const [index, setIndex] = useState(0)
+const [index, setIndex] = useState(4)
 
 const filtrageNext = () => {
-    //setFilter(journey.textContent)
     setIndex(index +1)
 }
 
 const filtragePrev = ()=> {
-   //setFilter(journey.textContent)
     setIndex( index - 1)
-    console.log("jai clic")
 }
 
-console.log("index = " + index)
-console.log("filter = " + filter)
-console.log("round index = " + round[index])
-//console.log(myRef)
-//console.log(myRef.current)
-//console.log(myRef.current.innerText)
-//console.log(myRef.current.innerHTML)
+
 
 
            return (

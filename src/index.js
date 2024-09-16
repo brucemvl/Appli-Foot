@@ -6,6 +6,7 @@ import './index.css';
 import Header from './components/Header'
 import Home from './Pages/Home';
 import FicheChampionnat from './Pages/FicheChampionnat';
+import FicheEurope from './Pages/FicheEurope';
 
 
 ReactDOM.render(
@@ -15,6 +16,7 @@ ReactDOM.render(
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/FicheChampionnat/:id' element={<FicheChampionnat />} />
+            <Route path='/FicheEurope/:id' element={<FicheEurope />} />
           </Routes>
       </Router>
   </React.StrictMode>,
