@@ -31,6 +31,7 @@
         flex-direction: column;
         align-items: center;
         border-radius: 5px;
+        overflow: hidden;
 
         .barre {
             display: grid;
@@ -80,6 +81,7 @@
             flex-direction: column;
             align-items: center;
             border-radius: 5px;
+            overflow: hidden;
 
             .barreButeurs {
                 display: grid;
@@ -233,8 +235,7 @@
     }
 
     100% {
-        opacity: 0;
-        transform: translateY(80%);
+        transform: translateY(-80%);
     }
 }
 
