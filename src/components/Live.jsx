@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/Live.scss"
+import { Link } from "react-router-dom";
+
 function Live(){
 
     const [live, setLive] = useState([])
@@ -35,6 +37,7 @@ function Live(){
             <h3 className="titreLive">LIVE</h3>
             <article className="live__tableau">
             {live.map((element)=> 
+            <Link className="lienMatch" to={`/FicheMatch/${element.fixture.id}`}>
             <li className="live__match">
                 <img src={element.league.logo} className="match__competition" alt="logo competition" />
             <p className="match__equipeDom">{element.teams.home.name}</p>
@@ -53,6 +56,7 @@ function Live(){
             <h4 className="sticker__live">Live</h4>
       
           </li>
+          </Link>
         
        )
 }
