@@ -40,6 +40,7 @@ function Tableau({id}){
     )
 
        const [filter, setFilter] = useState(round[0])
+       console.log(round)
 
 
     return (
