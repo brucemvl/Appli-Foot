@@ -18,7 +18,6 @@ function Live(){
         })
 .then((response)=> response.json()) 
 .then((json)=>{
-    console.log(json)
 
     setLive(json.response)
 
@@ -35,9 +34,10 @@ function Live(){
        return(
         <div className="live">
             <h3 className="titreLive">LIVE</h3>
+            { live.length === 0 ? <p className="nomatch"> Aucun match pour le moment</p> :
             <article className="live__tableau">
             {live.map((element)=> 
-            <Link className="lienMatch" to={`/FicheMatch/${element.fixture.id}`}>
+            <Link className="lienMatch" to={`/FicheMatch/${element.fixture.id}`} logo={element.league.logo} >
             <li className="live__match">
                 <img src={element.league.logo} className="match__competition" alt="logo competition" />
             <p className="match__equipeDom">{element.teams.home.name}</p>
@@ -61,6 +61,7 @@ function Live(){
        )
 }
 </article>
+}
 </div>
        )
     }

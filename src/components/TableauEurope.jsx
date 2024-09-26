@@ -45,7 +45,7 @@ function TableauEurope({id}){
     return (
         <section className="calendrierEtResultats">
             <h3>Calendrier et Resultats</h3>
-            <Journees setFilter={setFilter} round={round} filter={filter}/>
+            <Journees setFilter={setFilter} round={round} filter={filter} id={id}/>
             <ul className="tableau">
                 {team.map(element=> !filter || filter === element.league.round ?
                 <Match equipeDom={element.teams.home.name} equipeExt={element.teams.away.name} logoDom={element.teams.home.logo} round={element.league.round} logoExt={element.teams.away.logo} scoreDom={element.goals.home} scoreExt={element.goals.away} date={element.fixture.date} key={"match" + element.fixture.id} /> : null

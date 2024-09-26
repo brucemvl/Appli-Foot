@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom"
 import "../styles/Match.scss"
 
- function Match({equipeDom, equipeExt, logoDom, logoExt, scoreDom, scoreExt, date, round}){
+ function Match({equipeDom, equipeExt, logoDom, logoExt, scoreDom, scoreExt, id}){
 
  
 
 
 return (
+<Link className="lienMatch" to={`/FicheMatch/${id}`}>
     <li className="match">
       <p className="match__equipeDom">{equipeDom}</p>
       <img className="match__logoDom" src={logoDom} alt="logo domicile" />
@@ -21,6 +23,8 @@ return (
       <p className="match__equipeExt">{equipeExt}</p>
 
     </li>
+    </Link>
+    
 )
 
 }

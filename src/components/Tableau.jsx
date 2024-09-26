@@ -2,6 +2,7 @@ import Match from "./Match";
 import React, {useState, useEffect} from "react";
 import "../styles/Tableau.scss"
 import Journees from "./Journees";
+import { Link } from "react-router-dom";
 
 function Tableau({id}){
 
@@ -40,16 +41,18 @@ function Tableau({id}){
     )
 
        const [filter, setFilter] = useState(round[0])
-       console.log(round)
 
 
     return (
         <section className="calendrierEtResultats">
             <h3>Calendrier et Resultats</h3>
-            <Journees setFilter={setFilter} round={round} filter={filter}/>
+            <Journees setFilter={setFilter} round={round} filter={filter} id={id}/>
             <ul className="tableau">
-                {team.map(element=> !filter || filter === element.league.round ?
-                <Match equipeDom={element.teams.home.name} equipeExt={element.teams.away.name} logoDom={element.teams.home.logo} round={element.league.round} logoExt={element.teams.away.logo} scoreDom={element.goals.home} scoreExt={element.goals.away} date={element.fixture.date} key={"match" + element.fixture.id} /> : null
+                {team.map(element => !filter || filter === element.league.round ?
+                  
+
+
+                <Match equipeDom={element.teams.home.name} id={element.fixture.id} equipeExt={element.teams.away.name} logoDom={element.teams.home.logo} round={element.league.round} logoExt={element.teams.away.logo} scoreDom={element.goals.home} scoreExt={element.goals.away} date={element.fixture.date} key={"match" + element.fixture.id} />: null
 
 )}
             </ul>
