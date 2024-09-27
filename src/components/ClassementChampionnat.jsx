@@ -139,7 +139,7 @@ function ClassementChampionnat({id}){
                 </div>
                 <ul>
                     {tab.map((element)=>
-                    <li className="equipe">
+                    <li className="equipe" key={"champ" + element.team.id}>
                         <div>{element.rank}</div>
                         <img src={element.team.logo} alt="logo equipe" />
                         <p>{element.team.name}</p>

@@ -2,7 +2,6 @@ import Match from "./Match";
 import React, {useState, useEffect} from "react";
 import "../styles/Tableau.scss"
 import Journees from "./Journees";
-import { Link } from "react-router-dom";
 
 function Tableau({id}){
 

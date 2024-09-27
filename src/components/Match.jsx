@@ -1,14 +1,19 @@
-import { Link } from "react-router-dom"
 import "../styles/Match.scss"
+import { useState } from "react"
 
  function Match({equipeDom, equipeExt, logoDom, logoExt, scoreDom, scoreExt, id}){
 
+  const [modal, setModal] = useState(false)
+
  
+const openModal = ()=>{
+  setModal(!modal)
+}
 
 
+console.log(modal)
 return (
-<Link className="lienMatch" to={`/FicheMatch/${id}`}>
-    <li className="match">
+    <li className="match" onClick={openModal}>
       <p className="match__equipeDom">{equipeDom}</p>
       <img className="match__logoDom" src={logoDom} alt="logo domicile" />
       { scoreDom === scoreExt ? <div className="match__score">
@@ -22,8 +27,13 @@ return (
       <img className="match__logoExt" src={logoExt} alt="logo exterieur" />
       <p className="match__equipeExt">{equipeExt}</p>
 
+      {modal && <div className="modal">
+        <i class="fa-solid fa-xmark" ></i>
+        <p>{equipeDom}</p>
+      </div> }
     </li>
-    </Link>
+    
+    
     
 )
 

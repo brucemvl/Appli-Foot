@@ -40,6 +40,15 @@
             background-color: #919090;
         }
     }
+
+    .modal {
+        background-color: red;
+    opacity: 1;
+    height: 70%;
+    width: 80%;
+    position: fixed;
+    top: 8em;
+    }
 }
 
 @media (max-width: 767px) {
