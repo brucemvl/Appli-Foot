@@ -29,7 +29,7 @@
         align-self: center;
         background-color: red;
         color: white;
-        width: 75%;
+        width: 40%;
         text-align: center;
         font-family: permanent marker;
         border-radius: 5px;
@@ -123,6 +123,10 @@ em {
 @media (max-width: 767px) {
 
     .live {
+
+        .nomatch {
+            width: 70%;
+        }
 
         h3 {
             height: 2em;

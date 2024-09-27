@@ -33,14 +33,15 @@ setCurrentRound(json.response)
 
    )
 
-
    let currentIndex = round.indexOf(currentRound.toString())
 
+   const [index, setIndex] = useState(0)
+
+
+
 console.log(currentIndex)
-const [index, setIndex] = useState(5)
 
 console.log(index)
-
 
 const filtrageNext = () => {
     setIndex(index +1)
@@ -57,7 +58,7 @@ const filtragePrev = ()=> {
     <div className="clearfix">
            <div class="pre-button" onClick={filtragePrev} ><i class="fa-solid fa-chevron-left"></i></div>
             <div class="head-info">
-                <select onChange={setFilter(round[index])}><option>Journee {index}</option></select>
+                <select onChange={setFilter(round[index])}><option>Journee {index +1}</option></select>
             </div>
             <div class="next-button" onClick={filtrageNext} ><i class="fa-solid fa-chevron-right"></i></div>
             </div>
