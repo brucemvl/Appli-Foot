@@ -9,7 +9,7 @@ function Live(){
     useEffect(()=> {
         const fetchData = ()=>{
             try {
-                 fetch(`https://v3.football.api-sports.io/fixtures?live=2-61-140-39-78`, {
+                 fetch("https://v3.football.api-sports.io/fixtures?live=all", {
             method: "GET",
              headers: {
                 "x-rapidapi-key": "5ff22ea19db11151a018c36f7fd0213b",
@@ -37,7 +37,7 @@ function Live(){
             { live.length === 0 ? <p className="nomatch"> Aucun match pour le moment</p> :
             <article className="live__tableau">
             {live.map((element)=> 
-            <Link className="lienMatch" to={`/FicheMatch/${element.fixture.id}`} logo={element.league.logo} >
+            <Link className="lienMatch" to={`/FicheMatch/${element.fixture.id}`} >
             <li className="live__match">
                 <img src={element.league.logo} className="match__competition" alt="logo competition" />
             <p className="match__equipeDom">{element.teams.home.name}</p>

@@ -124,9 +124,38 @@ function ClassementEurope({id}) {
         <section className="classementEtStats">
             <article className="classement">
             <div className="titreCollapse"><img width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/leaderboard.png" className="titreCollapse__logo" alt="leaderboard"/><h3>Classement</h3> {rotateClassement ? <i class="fa-solid fa-chevron-down" onClick={collapseClassement}></i> : <i class="fa-solid fa-chevron-down active" onClick={collapseClassement}></i> }</div>
-            {openClassement &&
+            {openClassement ?
 
             <div className="dropdown">
+                <div className="barre">
+                    <div>Rang</div>
+                    <div>Equipe</div>
+                    <div>J</div>
+                    <div>V</div>
+                    <div>N</div>
+                    <div>D</div>
+                    <div>BP</div>
+                    <div>BC</div>
+                    <div>Points</div>
+                </div>
+                <ul>
+                    {tab.map((element)=>
+                    <li className="equipe">
+                        <div>{element.rank}</div>
+                        <img src={element.team.logo} alt="logo equipe" />
+                        <p>{element.team.name}</p>
+                        <div>{element.all.played}</div>
+                        <div>{element.all.win}</div>
+                        <div>{element.all.draw}</div>
+                        <div>{element.all.lose}</div>
+                        <div>{element.all.goals.for}</div>
+                        <div>{element.all.goals.against}</div>
+                        <span>{element.points}</span>
+                        </li>
+                    )}
+                </ul>
+                </div>
+                : <div className="dropdown inactive">
                 <div className="barre">
                     <div>Rang</div>
                     <div>Equipe</div>
@@ -160,7 +189,7 @@ function ClassementEurope({id}) {
             <div className="statistiques">
             <aside className="statistiques__joueurs">
                <div className="titreCollapse"><img width="64" height="64" className="titreCollapse__logo" src="https://img.icons8.com/pastel-glyph/64/FFFFFF/football-goal.png" alt="football-goal"/><h3>Meilleurs Buteurs</h3> {rotateButeurs ? <i class="fa-solid fa-chevron-down" onClick={collapseButeurs}></i> : <i class="fa-solid fa-chevron-down active" onClick={collapseButeurs}></i> }</div>
-                {openButeurs &&
+                {openButeurs ?
                 <div className="dropdown">
             <div className="barreButeurs">
                     <div>Joueur</div>
@@ -184,12 +213,37 @@ function ClassementEurope({id}) {
                     )}
                 </ul>
                 </div>
+                :
+                <div className="dropdown inactive">
+                    <div className="barreButeurs">
+                    <div>Joueur</div>
+                    <div>Buts</div>
+                    <div>Matchs</div>
+                </div>
+                <ul>
+                {buteurs.map((element)=> 
+                    <li className="buteur">
+                        <div className="joueur__infos">
+                        <span>{element.player.name}</span>
+                        <div className="joueur__infos__equipe">
+                        <img src={element.statistics[0].team.logo} alt="logo team"/>
+                        <p>{element.statistics[0].team.name}</p>
+                        </div>                      
+                        </div>
+                        <span>{element.statistics[0].goals.total}</span>
+                        <div>{element.statistics[0].games.appearences}</div>
+
+                    </li>
+                    )}
+                </ul>
+
+                </div>
 }
             </aside>
 
             <aside className="statistiques__joueurs">
                <div className="titreCollapse"><img width="50" height="50" className="titreCollapse__logo" src="https://img.icons8.com/ios-filled/50/FFFFFF/goal--v1.png" alt="goal--v1"/><h3>Meilleurs Passeurs</h3> {rotatePasseurs ? <i class="fa-solid fa-chevron-down" onClick={collapsePasseurs}></i> : <i class="fa-solid fa-chevron-down active" onClick={collapsePasseurs}></i> }</div>
-                {openPasseurs &&
+                {openPasseurs ?
                 <div className="dropdown">
             <div className="barrePasseurs">
                     <div>Joueur</div>
@@ -213,6 +267,29 @@ function ClassementEurope({id}) {
                     )}
                 </ul>
                 </div>
+                : <div className="dropdown inactive">
+                <div className="barrePasseurs">
+                        <div>Joueur</div>
+                        <div>Passes dec.</div>
+                        <div>Matchs</div>
+                    </div>
+                    <ul>
+                    {passeurs.map((element)=> 
+                        <li className="passeur">
+                            <div className="joueur__infos">
+                            <span>{element.player.name}</span>
+                            <div className="joueur__infos__equipe">
+                            <img src={element.statistics[0].team.logo} alt="logo team"/>
+                            <p>{element.statistics[0].team.name}</p>
+                            </div>                      
+                            </div>
+                            <span>{element.statistics[0].goals.assists}</span>
+                            <div>{element.statistics[0].games.appearences}</div>
+    
+                        </li>
+                        )}
+                    </ul>
+                    </div>
 }
             </aside>
             </div>

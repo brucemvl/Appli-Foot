@@ -28,7 +28,10 @@ return (
       <p className="match__equipeExt">{equipeExt}</p>
 
       {modal && <div className="modal">
-        <i class="fa-solid fa-xmark" ></i>
+        <div className="modal__header">
+          <h4>Details Match</h4>
+          <i class="fa-solid fa-xmark" ></i>
+        </div>
         <p>{equipeDom}</p>
       </div> }
     </li>

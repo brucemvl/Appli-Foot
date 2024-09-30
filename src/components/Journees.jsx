@@ -56,11 +56,11 @@ const filtragePrev = ()=> {
            return (
 
     <div className="clearfix">
-           <div class="pre-button" onClick={filtragePrev} ><i class="fa-solid fa-chevron-left"></i></div>
-            <div class="head-info">
+           <div className="pre-button" onClick={filtragePrev} ><i class="fa-solid fa-chevron-left"></i></div>
+            <div className="head-info">
                 <select onChange={setFilter(round[index])}><option>Journee {index +1}</option></select>
             </div>
-            <div class="next-button" onClick={filtrageNext} ><i class="fa-solid fa-chevron-right"></i></div>
+            <div className="next-button" onClick={filtrageNext} ><i class="fa-solid fa-chevron-right"></i></div>
             </div>
             
             )
