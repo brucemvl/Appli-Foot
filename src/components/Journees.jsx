@@ -35,7 +35,10 @@ setCurrentRound(json.response)
 
    let currentIndex = round.indexOf(currentRound.toString())
 
-   const [index, setIndex] = useState(0)
+   const [index, setIndex] = useState(currentIndex)
+
+   const i = currentIndex
+   console.log(i)
 
 
 
