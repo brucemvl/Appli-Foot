@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Details from "../components/Details.jsx"
+import "../styles/FicheMatch.scss"
 
 const FicheMatch = () => {
     const [match, setMatch] = useState(null);
@@ -41,9 +42,25 @@ const formattedHour = `${date.getHours().toString().padStart(2, '0')}h${date.get
     return (
         <div className='bloc'>
             <section>
-            <div className="ligue"><p>{match.league.name} Journee {roundd}</p><img src={match.league.logo} /></div>
-        <div className="datelieu">{formattedDate} {formattedHour}</div>
-        <div className="affiche"></div>
+            <div className="ligue"><p>{match.league.name} - Journee {roundd}</p></div>
+        <div className="datelieu">
+            <span>{formattedDate} - {formattedHour}</span>
+            <span>{match.fixture.venue.name} , {match.fixture.venue.city}</span>
+        </div>
+        <div className="affiche">
+            <div className='domicile'>
+                <img src={match.teams.home.logo} alt={`logo ${match.teams.home.name}`} />
+                <p>{match.teams.home.name}</p>
+            </div>
+            <div className='score'>
+                <span>{match.goals.home}</span> - <span>{match.goals.away}</span>
+            </div>
+            <div className='exterieur'>
+                <img src={match.teams.away.logo} alt={`logo ${match.teams.away.name}`} />
+                <p>{match.teams.away.name}</p>
+            </div>
+
+        </div>
 <Details />
             {/* other rendering logic */}
             </section>

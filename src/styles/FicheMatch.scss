@@ -1,0 +1,44 @@
+.bloc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .datelieu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .affiche {
+            display: flex;
+            background: linear-gradient(0deg, #000000 0%, rgba(251, 247, 247, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(246, 246, 246, 0.5) 100%);
+
+            background-color: steelblue;
+            color: white;
+            flex-direction: row;
+            padding-top: 1em;
+            border-radius: 10px;
+
+            .domicile, .exterieur {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 50%;
+                }
+            }
+
+            .score {
+                align-self: center;
+                height: 3em;
+                font-size: 2em;
+            }
+        }
+    }
+}
