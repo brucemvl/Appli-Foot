@@ -37,7 +37,22 @@ const FicheMatch = () => {
 
   const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`
 const formattedHour = `${date.getHours().toString().padStart(2, '0')}h${date.getMinutes().toString().padStart(2, '0')}`
-    console.log(formattedDate)
+
+const buteurs = match.events.filter((element) =>
+    element.type === "Goal"
+)
+
+const buteurHome = buteurs.filter (function (buteur){
+  return  buteur.team.name === match.teams.home.name
+})
+
+const buteurExt = buteurs.filter(function(buteur){
+    return buteur.team.name === match.teams.away.name
+})
+console.log(buteurs)
+console.log(buteurHome)
+console.log(buteurExt)
+
 
     return (
         <div className='bloc'>
@@ -61,7 +76,7 @@ const formattedHour = `${date.getHours().toString().padStart(2, '0')}h${date.get
             </div>
 
         </div>
-<Details />
+<Details buteurExt={buteurExt} buteurHome={buteurHome}/>
             {/* other rendering logic */}
             </section>
         </div>

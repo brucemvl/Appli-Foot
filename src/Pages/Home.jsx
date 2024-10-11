@@ -1,5 +1,5 @@
 import React from "react"
-import banner from "../assets/banner.jpg"
+import banner from "../assets/banner2.jpg"
 import Filtres from "../components/Filtres"
 import "../styles/Home.scss"
 import Live from "../components/Live"

@@ -7,6 +7,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
 
         .datelieu {
             display: flex;
@@ -17,12 +18,13 @@
         .affiche {
             display: flex;
             background: linear-gradient(0deg, #000000 0%, rgba(251, 247, 247, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(246, 246, 246, 0.5) 100%);
-
+            justify-content: space-evenly;
             background-color: steelblue;
             color: white;
             flex-direction: row;
             padding-top: 1em;
             border-radius: 10px;
+            width: 85%;
 
             .domicile, .exterieur {
                 display: flex;
@@ -38,6 +40,25 @@
                 align-self: center;
                 height: 3em;
                 font-size: 2em;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 767px){
+
+    .bloc {
+
+        section {
+
+            .affiche {
+                justify-content: center;
+                width: 95%;
+
+                .score {
+                    font-size: 1.75em;
+                }
             }
         }
     }
