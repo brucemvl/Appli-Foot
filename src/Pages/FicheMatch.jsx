@@ -6,6 +6,7 @@ import "../styles/FicheMatch.scss"
 const FicheMatch = () => {
     const [match, setMatch] = useState(null);
 
+
     const { id } = useParams()
 
     useEffect(() => {
@@ -49,6 +50,9 @@ const buteurHome = buteurs.filter (function (buteur){
 const buteurExt = buteurs.filter(function(buteur){
     return buteur.team.name === match.teams.away.name
 })
+
+
+
 console.log(buteurs)
 console.log(buteurHome)
 console.log(buteurExt)
@@ -76,7 +80,7 @@ console.log(buteurExt)
             </div>
 
         </div>
-<Details buteurExt={buteurExt} buteurHome={buteurHome}/>
+<Details buteurExt={buteurExt} buteurHome={buteurHome} buteurs={buteurs}/>
             {/* other rendering logic */}
             </section>
         </div>
