@@ -4,10 +4,27 @@ article {
     flex-direction: column;
     align-items: center;
 
-    .fiche {
+    .details {
         display: flex;
-    width: 100%;
+    width: 90%;
     justify-content: space-between;
     list-style-type: none;
+
+    .equipeExt {
+        text-align: right;
+    }
+    }
+}
+
+@media (max-width: 767px){
+
+    article {
+
+        .details {
+
+            li {
+                font-size: 0.85em;
+            }
+        }
     }
 }

@@ -5,7 +5,8 @@ function Journees({setFilter, round, id}){
 
 
 
-const [currentRound, setCurrentRound] = useState("")
+const [currentRound, setCurrentRound] = useState(0)
+const [index, setIndex] = useState(0);
 
 useEffect(()=> {
     const fetchRound = ()=>{
@@ -33,17 +34,17 @@ setCurrentRound(json.response)
 
    )
 
-   let currentIndex = round.indexOf(currentRound.toString())
+   useEffect(() => {
+    const currentIndex = round.indexOf(currentRound.toString());
+    if (currentIndex !== -1) {
+        setIndex(currentIndex);
+        console.log(currentIndex)
+ // Update index if currentRound is found
+    }
+}, []);
 
-   const [index, setIndex] = useState(currentIndex)
 
-   const i = currentIndex
-   console.log(i)
-
-
-
-console.log(currentIndex)
-
+console.log(currentRound)
 console.log(index)
 
 const filtrageNext = () => {
