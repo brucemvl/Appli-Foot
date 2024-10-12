@@ -51,6 +51,19 @@ const buteurExt = buteurs.filter(function(buteur){
     return buteur.team.name === match.teams.away.name
 })
 
+const stats = match.statistics.filter((element)=>
+element.statistics
+)
+
+const possession = stats.map((element)=>
+element.statistics )
+
+const poss = possession.map((element) => 
+element.filter((element)=> element.type === "Ball Possession"))
+
+console.log(stats)
+console.log(poss)
+
 
 
 console.log(buteurs)
@@ -80,7 +93,7 @@ console.log(buteurExt)
             </div>
 
         </div>
-<Details buteurExt={buteurExt} buteurHome={buteurHome} buteurs={buteurs}/>
+<Details buteurExt={buteurExt} buteurHome={buteurHome} buteurs={buteurs} possession={poss}/>
             {/* other rendering logic */}
             </section>
         </div>
