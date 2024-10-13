@@ -122,7 +122,7 @@ function ClassementChampionnat({id}){
        return (
         <section className="classementEtStats">
             <article className="classement">
-            <div className="titreCollapse"><img width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/leaderboard.png" className="titreCollapse__logo" alt="leaderboard"/><h3>Classement</h3> {rotateClassement ? <i class="fa-solid fa-chevron-down" onClick={collapseClassement}></i> : <i class="fa-solid fa-chevron-down active" onClick={collapseClassement}></i> }</div>
+            <div className="titreCollapse"><img width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/leaderboard.png" className="titreCollapse__logo" alt="leaderboard"/><h3>Classement</h3> {rotateClassement ? <i class="fa-solid fa-chevron-down" onClick={collapseClassement}></i> : <i class="fa-solid fa-chevron-down actif" onClick={collapseClassement}></i> }</div>
             {openClassement ?
 
             <div className="dropdown">
@@ -187,7 +187,7 @@ function ClassementChampionnat({id}){
             </article>
             <div className="statistiques">
             <aside className="statistiques__joueurs">
-               <div className="titreCollapse"><img width="64" height="64" className="titreCollapse__logo" src="https://img.icons8.com/pastel-glyph/64/FFFFFF/football-goal.png" alt="football-goal"/><h3>Meilleurs Buteurs</h3> {rotateButeurs ? <i class="fa-solid fa-chevron-down" onClick={collapseButeurs}></i> : <i class="fa-solid fa-chevron-down active" onClick={collapseButeurs}></i> }</div>
+               <div className="titreCollapse"><img width="64" height="64" className="titreCollapse__logo" src="https://img.icons8.com/pastel-glyph/64/FFFFFF/football-goal.png" alt="football-goal"/><h3>Meilleurs Buteurs</h3> {rotateButeurs ? <i class="fa-solid fa-chevron-down" onClick={collapseButeurs}></i> : <i class="fa-solid fa-chevron-down actif" onClick={collapseButeurs}></i> }</div>
                 {openButeurs ?
                 <div className="dropdown">
             <div className="barreButeurs">
@@ -239,7 +239,7 @@ function ClassementChampionnat({id}){
             </aside>
 
             <aside className="statistiques__joueurs">
-               <div className="titreCollapse"><img width="50" height="50" className="titreCollapse__logo" src="https://img.icons8.com/ios-filled/50/FFFFFF/goal--v1.png" alt="goal--v1"/><h3>Meilleurs Passeurs</h3> {rotatePasseurs ? <i class="fa-solid fa-chevron-down" onClick={collapsePasseurs}></i> : <i class="fa-solid fa-chevron-down active" onClick={collapsePasseurs}></i> }</div>
+               <div className="titreCollapse"><img width="50" height="50" className="titreCollapse__logo" src="https://img.icons8.com/ios-filled/50/FFFFFF/goal--v1.png" alt="goal--v1"/><h3>Meilleurs Passeurs</h3> {rotatePasseurs ? <i class="fa-solid fa-chevron-down" onClick={collapsePasseurs}></i> : <i class="fa-solid fa-chevron-down actif" onClick={collapsePasseurs}></i> }</div>
                 {openPasseurs ?
                 <div className="dropdown">
             <div className="barrePasseurs">
