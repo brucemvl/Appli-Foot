@@ -55,14 +55,29 @@ const stats = match.statistics.filter((element)=>
 element.statistics
 )
 
-const possession = stats.map((element)=>
+const statss = stats.map((element)=>
 element.statistics )
 
-const poss = possession.map((element) => 
+const poss = statss.map((element) => 
 element.filter((element)=> element.type === "Ball Possession"))
 
-console.log(stats)
-console.log(poss)
+const xg = statss.map((element) => 
+    element.filter((element)=> element.type === "expected_goals"))
+
+const tirs = statss.map((element) => 
+    element.filter((element)=> element.type === "Total Shots"))
+
+const tirsCadres = statss.map((element) => 
+    element.filter((element)=> element.type === "Shots on Goal"))
+
+const jaune = statss.map((element) => 
+    element.filter((element)=> element.type === "Yellow Cards"))
+
+const rouge = statss.map((element) => 
+    element.filter((element)=> element.type === "Red Cards"))
+
+console.log(statss)
+console.log(xg)
 
 
 
@@ -91,9 +106,12 @@ console.log(buteurExt)
                 <img src={match.teams.away.logo} alt={`logo ${match.teams.away.name}`} />
                 <p>{match.teams.away.name}</p>
             </div>
-
         </div>
-<Details buteurExt={buteurExt} buteurHome={buteurHome} buteurs={buteurs} possession={poss}/>
+        <div className="buts">
+            <div className="equipeDomicile">{buteurHome.map((element)=> <li key={`buteur: ${element.player.name}`}><i class="fa-regular fa-futbol"></i> {element.player.name}, {element.time.elapsed}' {element.time.extra ? ` + ${element.time.extra}` : null} {element.detail === "Own Goal" ?<em> (csc) </em> : null} {element.detail === "Penalty" ? <em>(pen)</em> : null}</li>)}</div>
+            <div className="equipeExt">{buteurExt.map((element)=> <li key={`buteurExt: ${element.player.name}`}><i class="fa-regular fa-futbol"></i> {element.player.name}, {element.time.elapsed}' {element.time.extra ? ` + ${element.time.extra}` : null} {element.detail === "Own Goal" ? <em>(csc)</em> : null} {element.detail === "Penalty" ? <em>(pen)</em> : null}</li>)}</div>
+        </div>
+<Details possession={poss} expectedGoals={xg} tirs={tirs} tirsCadres={tirsCadres} jaune={jaune} rouge={rouge}/>
             {/* other rendering logic */}
             </section>
         </div>

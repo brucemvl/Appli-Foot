@@ -16,12 +16,11 @@
         }
 
         .affiche {
-            display: flex;
+            display: grid;
             background: linear-gradient(0deg, #000000 0%, rgba(251, 247, 247, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(246, 246, 246, 0.5) 100%);
-            justify-content: space-evenly;
-            background-color: steelblue;
+grid-template-columns: 40% 20% 40%;       
+     background-color: steelblue;
             color: white;
-            flex-direction: row;
             padding-top: 1em;
             border-radius: 10px;
             width: 85%;
@@ -32,15 +31,27 @@
                 align-items: center;
 
                 img {
-                    width: 50%;
-                }
+height: 9em;                }
             }
 
             .score {
                 align-self: center;
                 height: 3em;
                 font-size: 2em;
+                justify-self: center;
             }
+        }
+
+        .buts {
+            display: flex;
+            width: 85%;
+            justify-content: space-between;
+            list-style-type: none;
+    
+            .equipeExt {
+                text-align: right;
+            }
+    
         }
     }
 }
@@ -57,11 +68,27 @@
             }
 
             .affiche {
-                justify-content: center;
                 width: 95%;
+
+                .domicile, .exterieur {
+
+                    img {
+                        height: 6em;
+                    }
+                }
 
                 .score {
                     font-size: 1.75em;
+                    
+                }
+            }
+
+            .buts {
+
+                width: 95%;
+    
+                li {
+                    font-size: 0.85em;
                 }
             }
         }
