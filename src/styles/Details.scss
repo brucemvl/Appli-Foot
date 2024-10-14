@@ -13,8 +13,12 @@ article {
 
         div {
             display: flex;
-            align-items: center;
-        justify-content: space-around;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(0deg, #000000 0%, rgb(0 0 0 / 0%) 70%, rgba(4, 4, 4, 0.205) 99.99%, rgb(0 0 0 / 50%) 100%);
+    background-color: steelblue;
+    color: white;
+    border-bottom: 1px solid;
         }
     }
 }

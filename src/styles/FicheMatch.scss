@@ -18,20 +18,23 @@
         .affiche {
             display: grid;
             background: linear-gradient(0deg, #000000 0%, rgba(251, 247, 247, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(246, 246, 246, 0.5) 100%);
-grid-template-columns: 40% 20% 40%;       
-     background-color: steelblue;
+            grid-template-columns: 40% 20% 40%;
+            background-color: steelblue;
             color: white;
             padding-top: 1em;
             border-radius: 10px;
             width: 85%;
+            margin-block: 5px;
 
-            .domicile, .exterieur {
+            .domicile,
+            .exterieur {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
 
                 img {
-height: 9em;                }
+                    height: 9em;
+                }
             }
 
             .score {
@@ -47,17 +50,17 @@ height: 9em;                }
             width: 85%;
             justify-content: space-between;
             list-style-type: none;
-    
+
             .equipeExt {
                 text-align: right;
             }
-    
+
         }
     }
 }
 
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
 
     .bloc {
 
@@ -70,7 +73,8 @@ height: 9em;                }
             .affiche {
                 width: 95%;
 
-                .domicile, .exterieur {
+                .domicile,
+                .exterieur {
 
                     img {
                         height: 6em;
@@ -79,14 +83,14 @@ height: 9em;                }
 
                 .score {
                     font-size: 1.75em;
-                    
+
                 }
             }
 
             .buts {
 
                 width: 95%;
-    
+
                 li {
                     font-size: 0.85em;
                 }

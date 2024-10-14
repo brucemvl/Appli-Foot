@@ -76,6 +76,15 @@ const jaune = statss.map((element) =>
 const rouge = statss.map((element) => 
     element.filter((element)=> element.type === "Red Cards"))
 
+const passes = statss.map((element) => 
+    element.filter((element)=> element.type === "Total passes"))
+
+const passesReussies = statss.map((element) => 
+    element.filter((element)=> element.type === "Passes accurate"))
+
+const accuracy = statss.map((element) => 
+    element.filter((element)=> element.type === "Passes %"))
+
 console.log(statss)
 console.log(xg)
 
@@ -111,7 +120,7 @@ console.log(buteurExt)
             <div className="equipeDomicile">{buteurHome.map((element)=> <li key={`buteur: ${element.player.name}`}><i class="fa-regular fa-futbol"></i> {element.player.name}, {element.time.elapsed}' {element.time.extra ? ` + ${element.time.extra}` : null} {element.detail === "Own Goal" ?<em> (csc) </em> : null} {element.detail === "Penalty" ? <em>(pen)</em> : null}</li>)}</div>
             <div className="equipeExt">{buteurExt.map((element)=> <li key={`buteurExt: ${element.player.name}`}><i class="fa-regular fa-futbol"></i> {element.player.name}, {element.time.elapsed}' {element.time.extra ? ` + ${element.time.extra}` : null} {element.detail === "Own Goal" ? <em>(csc)</em> : null} {element.detail === "Penalty" ? <em>(pen)</em> : null}</li>)}</div>
         </div>
-<Details possession={poss} expectedGoals={xg} tirs={tirs} tirsCadres={tirsCadres} jaune={jaune} rouge={rouge}/>
+<Details possession={poss} expectedGoals={xg} tirs={tirs} tirsCadres={tirsCadres} jaune={jaune} rouge={rouge} passes={passes} passesReussies={passesReussies} accuracy={accuracy} />
             {/* other rendering logic */}
             </section>
         </div>
