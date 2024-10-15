@@ -1,6 +1,31 @@
 footer {
 
     background-color: black;
-    height: 8em;
+    height: 7em;
     margin-top: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: white;
+    align-items: center;
+    justify-items: center;
+    padding: 0.5em;
+
+    a {
+        color: white;
+    }
+
+    div {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        filter: invert(1);
+        width: 4em;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+    }
 }
