@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './index.css';
 //import App from './App';
 import Header from './components/Header'
+import Footer from './components/Footer';
 import Home from './Pages/Home';
 import FicheChampionnat from './Pages/FicheChampionnat';
 import FicheEurope from './Pages/FicheEurope';
@@ -20,6 +21,7 @@ ReactDOM.render(
             <Route path='/FicheEurope/:id' element={<FicheEurope />} />
             <Route path='/FicheMatch/:id' element={<FicheMatch />} />
           </Routes>
+          <Footer />
       </Router>
   </React.StrictMode>,
 document.getElementById('root')
