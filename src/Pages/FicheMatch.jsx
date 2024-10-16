@@ -6,6 +6,18 @@ import "../styles/FicheMatch.scss"
 const FicheMatch = () => {
     const [match, setMatch] = useState(null);
 
+    const [details, setDetails] = useState(true)
+    const [selected, setSelected] = useState(true)
+    const [selected2, setSelected2] = useState(false)
+
+
+    const openContent = () => {
+        setDetails(!details)
+        setSelected(!selected)
+        setSelected2(!selected2)
+
+    }
+
 
     const { id } = useParams()
 
@@ -120,8 +132,17 @@ console.log(buteurExt)
             <div className="equipeDomicile">{buteurHome.map((element)=> <li key={`buteur: ${element.player.name}`}><i class="fa-regular fa-futbol"></i> {element.player.name}, {element.time.elapsed}' {element.time.extra ? ` + ${element.time.extra}` : null} {element.detail === "Own Goal" ?<em> (csc) </em> : null} {element.detail === "Penalty" ? <em>(pen)</em> : null}</li>)}</div>
             <div className="equipeExt">{buteurExt.map((element)=> <li key={`buteurExt: ${element.player.name}`}><i class="fa-regular fa-futbol"></i> {element.player.name}, {element.time.elapsed}' {element.time.extra ? ` + ${element.time.extra}` : null} {element.detail === "Own Goal" ? <em>(csc)</em> : null} {element.detail === "Penalty" ? <em>(pen)</em> : null}</li>)}</div>
         </div>
+        <nav className="fiche__selecteur">
+                <ul>
+                    {selected ? <li className="details selected">Details</li>: <li onClick={openContent} className="details">Details</li> }
+                    {selected2 ? <li className="compos selected">Compos</li> : <li onClick={openContent} className="compos">Compos</li>}
+                </ul>
+                </nav>
+                { details ?
 <Details possession={poss} expectedGoals={xg} tirs={tirs} tirsCadres={tirsCadres} jaune={jaune} rouge={rouge} passes={passes} passesReussies={passesReussies} accuracy={accuracy} />
-            {/* other rendering logic */}
+:
+<div></div>
+           } {/* other rendering logic */}
             </section>
         </div>
     );

@@ -2,6 +2,7 @@ import React from 'react'
 import emailjs from '@emailjs/browser'
 import { useRef } from 'react';
 import "../styles/Contact.scss"
+import Home from "../Pages/Home.jsx"
 
 
 
@@ -11,7 +12,7 @@ function Contact() {
 
     const form = useRef();
      const sendEmail = (e) => { e.preventDefault(); emailjs.sendForm( "react_contact", "react_contact_11/10", form.current, "5a9QlNXeINK_p0GwQ" ) 
-        .then( (result) => { alert('Message envoyé avec succes!'); console.log(result.text); },
+        .then( (result) =>  { alert('Message envoyé avec succes!'); console.log(result.text); },
          (error) => { console.log(error.text); } ); };
 
     return (
