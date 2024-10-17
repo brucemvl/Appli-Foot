@@ -1,59 +1,36 @@
 import { useState, useEffect } from "react"
 
-function Journees({setFilter, round, id}){
+function Journees({setFilter, id, round, currentIndex}){
+
+
+   const [index, setIndex] = useState(0);
+
+   useEffect(()=>{
+    setIndex(currentIndex)
+   }, [currentIndex])
+
+
+
+   console.log(currentIndex)
+   console.log(index)
+
+  
 
 
 
 
-const [currentRound, setCurrentRound] = useState(0)
-const [index, setIndex] = useState(0);
 
-useEffect(()=> {
-    const fetchRound = ()=>{
-        try {
-             fetch(`https://v3.football.api-sports.io/fixtures/rounds?season=2024&league=${id}&current=true`, {
-        method: "GET",
-         headers: {
-            "x-rapidapi-key": "5ff22ea19db11151a018c36f7fd0213b",
-            "x-rapidapi-host": "v3.football.api-sports.io",
-        }
-    })
-.then((response)=> response.json()) 
-.then((json)=>{
-console.log(json)
-
-setCurrentRound(json.response)
-
-})      
-    
-   }
-   catch (error){
-    console.error("error:", error)
-   }};
-   fetchRound();}, [id]
-
-   )
-
-   useEffect(() => {
-    const currentIndex = round.indexOf(currentRound.toString());
-    if (currentIndex !== -1) {
-        setIndex(currentIndex);
-        console.log(currentIndex)
- // Update index if currentRound is found
-    }
-}, []);
+ 
 
 
-console.log(currentRound)
-console.log(index)
 
-const filtrageNext = () => {
-    setIndex(index +1)
-}
+    const filtrageNext = () => {
+        setIndex(prevIndex => Math.min(index + 1, round.length - 1)); // Limiter pour éviter de dépasser
+    };
 
-const filtragePrev = ()=> {
-    setIndex(index -1)
-}
+    const filtragePrev = () => {
+        setIndex(prevIndex => Math.max(index - 1, 0)); // Limiter pour éviter d'aller en dessous de 0
+    };
 
 
 

@@ -39,13 +39,48 @@ function Tableau({id}){
             []
     )
 
-       const [filter, setFilter] = useState(round[0])
+
+
+       const [filter, setFilter] = useState(round)
+
+       const [currentRound, setCurrentRound] = useState("")
+
+useEffect(()=> {
+    const  fetchRound = ()=>{
+        try {
+              fetch(`https://v3.football.api-sports.io/fixtures/rounds?season=2024&league=${id}&current=true`, {
+        method: "GET",
+         headers: {
+            "x-rapidapi-key": "5ff22ea19db11151a018c36f7fd0213b",
+            "x-rapidapi-host": "v3.football.api-sports.io",
+        }
+    })
+.then((response)=> response.json()) 
+.then((json)=>{
+console.log(json.response[0])
+setCurrentRound(json.response[0])
+
+
+
+})      
+    
+   }
+   catch (error){
+    console.error("error:", error)
+   }};
+   fetchRound();}, [id]
+
+   )
+   
+
+
+   const currentIndex = round.indexOf(currentRound);
 
 
     return (
         <section className="calendrierEtResultats">
             <h3>Calendrier et Resultats</h3>
-            <Journees setFilter={setFilter} round={round} filter={filter} id={id}/>
+            <Journees setFilter={setFilter}  round={round} filter={filter} id={id} team={team} currentIndex={currentIndex}/>
             <ul className="tableau">
                 {team.map(element => !filter || filter === element.league.round ?
                   
