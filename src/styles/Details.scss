@@ -14,7 +14,7 @@ article {
         div {
             display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background: linear-gradient(0deg, #000000 0%, rgb(0 0 0 / 0%) 70%, rgba(4, 4, 4, 0.205) 99.99%, rgb(0 0 0 / 50%) 100%);
     background-color: steelblue;
     color: white;
@@ -26,6 +26,13 @@ article {
 @media (max-width: 767px) {
 
     article {
+
+        .statistiques {
+
+            div {
+                justify-content: space-around;
+            }
+        }
 
 
 

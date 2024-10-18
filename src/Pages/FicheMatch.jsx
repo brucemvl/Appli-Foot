@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Details from "../components/Details.jsx"
+import Compositions from '../components/Compositions.jsx';
 import "../styles/FicheMatch.scss"
 
 const FicheMatch = () => {
@@ -63,6 +64,8 @@ const buteurExt = buteurs.filter(function(buteur){
     return buteur.team.name === match.teams.away.name
 })
 
+//PARTIE DETAILS
+
 const stats = match.statistics.filter((element)=>
 element.statistics
 )
@@ -97,14 +100,23 @@ const passesReussies = statss.map((element) =>
 const accuracy = statss.map((element) => 
     element.filter((element)=> element.type === "Passes %"))
 
-console.log(statss)
-console.log(xg)
+// PARTIE COMPOS
+
+const equipes = match.lineups
+const compoDom = match.lineups[0]
+const compoExt = match.lineups[1]
+
+const coachDom = compoDom.coach.name
+const coachExt = compoExt.coach.name
+
+const titulairesDom = compoDom.startXI.map((element)=> element)
+const titulairesExt = compoExt.startXI.map((element)=> element)
 
 
+console.log(titulairesDom)
+console.log(titulairesExt)
 
-console.log(buteurs)
-console.log(buteurHome)
-console.log(buteurExt)
+
 
 
     return (
@@ -141,7 +153,7 @@ console.log(buteurExt)
                 { details ?
 <Details possession={poss} expectedGoals={xg} tirs={tirs} tirsCadres={tirsCadres} jaune={jaune} rouge={rouge} passes={passes} passesReussies={passesReussies} accuracy={accuracy} />
 :
-<div></div>
+<Compositions titulairesDom={titulairesDom} titulairesExt={titulairesExt}/>
            } {/* other rendering logic */}
             </section>
         </div>
