@@ -19,6 +19,7 @@ function Contact() {
         <div className='blocContact'> 
             <h1>Contact</h1>
             <form className='formulaire' ref={form} onSubmit={sendEmail}>
+                <div className='formulaire__background'>
                 <div className='formulaire__nom'>
                     <label>Nom</label>
                     <input type='text' placeholder='Nom' name='user_name' />
@@ -30,6 +31,7 @@ function Contact() {
                 <div className='formulaire__message'>
                     <label>Message</label>
                     <textarea name='message' type='text' placeholder='Message'></textarea>
+                </div>
                 </div>
                 <input type='submit' value='Envoyer' id='input-submit' className='submit' />
             </form>
