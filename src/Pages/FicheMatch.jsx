@@ -102,13 +102,14 @@ const accuracy = statss.map((element) =>
 
 // PARTIE COMPOS
 
-const equipes = match.lineups
 const compoDom = match.lineups[0]
 const compoExt = match.lineups[1]
 
 const coachDom = compoDom.coach.name
 const coachExt = compoExt.coach.name
 
+const systemeDom = compoDom.formation
+const systemeExt = compoExt.formation
 
 
 const tituDom = match.players[0].players.slice(0, 11)
@@ -156,7 +157,7 @@ const tituExt = match.players[1].players.slice(0, 11)
                 { details ?
 <Details possession={poss} expectedGoals={xg} tirs={tirs} tirsCadres={tirsCadres} jaune={jaune} rouge={rouge} passes={passes} passesReussies={passesReussies} accuracy={accuracy} />
 :
-<Compositions titulairesDom={tituDom} titulairesExt={tituExt}/>
+<Compositions titulairesDom={tituDom} titulairesExt={tituExt} coachDom={coachDom} coachExt={coachExt} systemeDom={systemeDom} systemeExt={systemeExt}/>
            } {/* other rendering logic */}
             </section>
         </div>
