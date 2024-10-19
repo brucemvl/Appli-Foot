@@ -1,0 +1,22 @@
+article {
+
+    .joueurs {
+
+        display: flex;
+        width: 95%;
+        justify-content: space-between;
+
+        ul {
+            list-style-type: none;
+            padding-inline-start: 0;
+
+            li {
+                font-size: 0.8em;
+            }
+        }
+
+        .joueurs__ext {
+            text-align: right;
+        }
+    }
+}

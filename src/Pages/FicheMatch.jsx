@@ -109,12 +109,15 @@ const compoExt = match.lineups[1]
 const coachDom = compoDom.coach.name
 const coachExt = compoExt.coach.name
 
-const titulairesDom = compoDom.startXI.map((element)=> element)
-const titulairesExt = compoExt.startXI.map((element)=> element)
 
 
-console.log(titulairesDom)
-console.log(titulairesExt)
+const tituDom = match.players[0].players.slice(0, 11)
+const tituExt = match.players[1].players.slice(0, 11)
+
+
+
+
+
 
 
 
@@ -153,7 +156,7 @@ console.log(titulairesExt)
                 { details ?
 <Details possession={poss} expectedGoals={xg} tirs={tirs} tirsCadres={tirsCadres} jaune={jaune} rouge={rouge} passes={passes} passesReussies={passesReussies} accuracy={accuracy} />
 :
-<Compositions titulairesDom={titulairesDom} titulairesExt={titulairesExt}/>
+<Compositions titulairesDom={tituDom} titulairesExt={tituExt}/>
            } {/* other rendering logic */}
             </section>
         </div>
