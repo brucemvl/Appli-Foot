@@ -1,7 +1,7 @@
 import Match from "./Match";
 import React, { useState, useEffect } from "react";
 import "../styles/Tableau.scss"
-import Journees from "./Journees";
+import JourneesEurope from "./JourneesEurope.jsx";
 
 function TableauEurope({ id }) {
 
@@ -77,7 +77,7 @@ function TableauEurope({ id }) {
     return (
         <section className="calendrierEtResultats">
             <h3>Calendrier et Resultats</h3>
-            <Journees setFilter={setFilter} round={round} filter={filter} id={id} currentIndex={currentIndex} />
+            <JourneesEurope setFilter={setFilter} round={round} filter={filter} id={id} currentIndex={currentIndex} />
             <ul className="tableau">
                 {team.map(element => !filter || filter === element.league.round ?
                     <Match id={element.fixture.id} equipeDom={element.teams.home.name} equipeExt={element.teams.away.name} logoDom={element.teams.home.logo} round={element.league.round} logoExt={element.teams.away.logo} scoreDom={element.goals.home} scoreExt={element.goals.away} date={element.fixture.date} key={"matcheurope" + element.fixture.id} /> : null

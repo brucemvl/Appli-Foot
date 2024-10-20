@@ -7,6 +7,7 @@ import Header from './components/Header'
 import Footer from './components/Footer';
 import Contact from './Pages/Contact';
 import Home from './Pages/Home';
+import Clubs from './Pages/Clubs';
 import FicheChampionnat from './Pages/FicheChampionnat';
 import FicheEurope from './Pages/FicheEurope';
 import FicheMatch from './Pages/FicheMatch';
@@ -22,6 +23,7 @@ ReactDOM.render(
             <Route path='/FicheEurope/:id' element={<FicheEurope />} />
             <Route path='/FicheMatch/:id' element={<FicheMatch />} />
             <Route path='/Contact' element={<Contact />} />
+            <Route path='/Clubs' element={<Clubs />} />
           </Routes>
           <Footer />
       </Router>

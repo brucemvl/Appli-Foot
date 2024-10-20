@@ -49,6 +49,47 @@ export const championnats = [
 
 ]
 
+export const autres = [
+
+    {
+        "id": 94,
+        "name": "Primeira Liga",
+        "country": "Portugal",
+        "logo": "https://media.api-sports.io/football/leagues/94.png",
+        "flag": "https://media.api-sports.io/flags/pt.svg",
+        "season": 2024,
+    },
+
+    {
+        "id": 88,
+        "name": "Eredivisie",
+        "country": "Pays-Bas",
+        "logo": "https://media.api-sports.io/football/leagues/88.png",
+        "flag": "https://media.api-sports.io/flags/nl.svg",
+        "season": 2024,
+    },
+
+    {
+        "id": 203,
+        "name": "Süper Lig",
+        "country": "Turkey",
+        "logo": "https://media.api-sports.io/football/leagues/203.png",
+        "flag": "https://media.api-sports.io/flags/tr.svg",
+        "season": 2024,
+    },
+
+    {
+        "id": 186,
+        "name": "Ligue 1 DZ",
+        "country": "Algerie",
+        "logo": "https://media.api-sports.io/football/leagues/186.png",
+        "flag": "https://media.api-sports.io/flags/dz.svg",
+        "season": 2024,
+    }
+
+
+]
+
 export const europe = [
 
     {

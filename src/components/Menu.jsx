@@ -32,7 +32,7 @@ function Menu() {
                         <ul>
                            <NavLink to="/"><li>Accueil</li></NavLink> 
                            <NavLink to="/travaux"><li>Live</li></NavLink> 
-                           <NavLink to="/"><li>Clubs</li></NavLink>
+                           <NavLink to="/Clubs"><li>Clubs</li></NavLink>
                            <NavLink to="/"><li>Selections</li></NavLink> 
 
                         </ul>
