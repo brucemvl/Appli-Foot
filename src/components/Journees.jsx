@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 
-function Journees({setFilter, id, round, currentIndex}){
+function Journees({setFilter, round, currentIndex, newround}){
 
-
-   const [index, setIndex] = useState(0);
+console.log(currentIndex)
+   const [index, setIndex] = useState();
 
    useEffect(()=>{
     setIndex(currentIndex)
@@ -13,16 +13,6 @@ function Journees({setFilter, id, round, currentIndex}){
 
    console.log(currentIndex)
    console.log(index)
-
-  
-
-
-
-
-
- 
-
-
 
     const filtrageNext = () => {
         setIndex(prevIndex => Math.min(index + 1, round.length - 1)); // Limiter pour éviter de dépasser
@@ -39,7 +29,7 @@ function Journees({setFilter, id, round, currentIndex}){
     <div className="clearfix">
            <div className="pre-button" onClick={filtragePrev} ><i class="fa-solid fa-chevron-left"></i></div>
             <div className="head-info">
-                <select onChange={setFilter(round[index])}><option>Journee {index +1}</option></select>
+                <select onChange={setFilter(newround[index])}><option>Journee {index +1}</option></select>
             </div>
             <div className="next-button" onClick={filtrageNext} ><i class="fa-solid fa-chevron-right"></i></div>
             </div>

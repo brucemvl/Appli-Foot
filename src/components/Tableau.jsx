@@ -70,16 +70,26 @@ function Tableau({ id }) {
 
     )
 
-    const currentIndex = round.indexOf(currentRound);
+    function compareNombres(a, b) {
+        return a - b;
+      }
+
+const chiffre = round.map((element)=> element.slice(element.length - 2))
+const newround = chiffre.sort(compareNombres)
+const newwround= chiffre.map((element)=> element.replace( "", "Regular Season -"))
+
+    const currentIndex = newwround.indexOf(currentRound)
+    console.log(chiffre)
+    console.log(newwround)
+    console.log(currentRound)
+    console.log(currentIndex)
 
     return (
         <section className="calendrierEtResultats">
             <h3>Calendrier et Resultats</h3>
-            <Journees setFilter={setFilter} round={round} filter={filter} id={id} team={team} currentIndex={currentIndex} />
+            <Journees setFilter={setFilter} round={round} filter={filter} id={id} team={team} currentIndex={currentIndex} newround={newwround}/>
             <ul className="tableau">
                 {team.map(element => !filter || filter === element.league.round ?
-
-
 
                     <Match equipeDom={element.teams.home.name} id={element.fixture.id} equipeExt={element.teams.away.name} logoDom={element.teams.home.logo} round={element.league.round} logoExt={element.teams.away.logo} scoreDom={element.goals.home} scoreExt={element.goals.away} date={element.fixture.date} key={"match" + element.fixture.id} /> : null
 
