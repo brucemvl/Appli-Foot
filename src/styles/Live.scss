@@ -43,6 +43,12 @@
         padding: 1%;
         width: 98%;
 
+        a {
+            text-decoration: none;
+            color: black;
+            width: 100%;
+        
+
         .live__match {
             display: grid;
             overflow: hidden;
@@ -98,15 +104,11 @@
 
             }
         }
+    }
 
     }
 }
 
-a {
-    text-decoration: none;
-    color: black;
-    width: 100%;
-}
 
 .sticker__live {
     color: white;
@@ -134,6 +136,8 @@ a {
 
         .live__tableau {
 
+            a {
+
             .live__match {
                 grid-template-columns: 9% 24% 8% 22% 8% 24% 5%;
 
@@ -141,8 +145,13 @@ a {
                     font-size: 0.7em;
                 }
 
-                img {
-                    height: 1.8em;
+                .match__logoDom, .match__logoExt {
+                    height: 1.6em;
+                    width: 1.6em;
+                }
+
+                .match__competition {
+                    height: 2em;
                     width: 1.8em;
                 }
 
@@ -165,6 +174,7 @@ a {
 
 
             }
+        }
         }
     }
 }

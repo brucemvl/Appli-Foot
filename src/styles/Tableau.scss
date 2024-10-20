@@ -48,6 +48,10 @@
         padding-inline-start: 0;
         width: 98%;
 
+        a {
+            text-decoration: none;
+            color: #000000;
+
         li {
             border-bottom: 1px solid black;
 
@@ -55,6 +59,7 @@
                 font-weight: 500;
             }
         }
+    }
     }
 
     .clearfix {

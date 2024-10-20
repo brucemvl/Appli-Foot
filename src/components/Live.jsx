@@ -7,7 +7,7 @@ function Live(){
     const [live, setLive] = useState([])
 
     useEffect(()=> {
-        const fetchData = ()=>{
+        const fetchLive = ()=>{
             try {
                  fetch("https://v3.football.api-sports.io/fixtures?live=2-61-39-140-78-135", {
             method: "GET",
@@ -27,9 +27,11 @@ function Live(){
        catch (error){
         console.error("error:", error)
        }};
-       fetchData();}, []
+       fetchLive();}, []
 
        )
+
+       console.log(live)
 
        return(
         <div className="live">
@@ -49,6 +51,7 @@ function Live(){
             </div> :
             <div className="match__score">
               { element.goals.home > element.goals.away ? <span className="winner">{element.goals.home}</span> : <span className="looser">{element.goals.home}</span>}
+              <div className="time"><em>{element.fixture.status.elapsed}'</em></div>
              { element.goals.away > element.goals.home ? <span className="winner">{element.goals.away}</span> : <span className="looser">{element.goals.away}</span>}
             </div>}
             <img className="match__logoExt" src={element.teams.away.logo} alt="logo exterieur" />
