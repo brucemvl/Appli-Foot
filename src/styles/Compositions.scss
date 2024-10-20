@@ -14,13 +14,23 @@ article {
                 font-size: 0.8em;
             }
 
-            h4{
-                text-align: center;
-            }
+        }
+
+        .joueurs__domicile {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .joueurs__ext {
-            text-align: right;
-        }
+display: flex;
+flex-direction: column;
+align-items: flex-end;  
+
+li {
+    display: flex;
+    flex-direction: row-reverse;
+}
+}
     }
 }

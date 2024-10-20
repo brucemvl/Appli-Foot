@@ -8,7 +8,7 @@ const dateh = new Date(date)
 const formattedHour = `${dateh.getHours().toString().padStart(2, '0')}h${dateh.getMinutes().toString().padStart(2, '0')}`
 
   return (
-    <Link to={`/FicheMatch/${id}`} equipeDom={equipeDom}>
+    <Link to={`/FicheMatch/${id}`}>
 
       <li className="match" >
         <div className="dateheure"><em>{formattedDate}</em><em>{formattedHour}</em></div>

@@ -12,7 +12,7 @@ return (
             <ul className="joueurs__domicile">
                 <h4>{systemeDom}</h4>
                 {titulairesDom.map((element)=>
-                <li>{element.player.name}, {element.statistics[0].goals.total >= 1 ? "☀️" : ""}</li>
+                <li>{element.player.name} {element.statistics[0].goals.total >= 1 ? ", ⚽" : ""}</li>
                 )}
                 <p>Coach: {coachDom}</p>
                
@@ -20,7 +20,8 @@ return (
             <ul className="joueurs__ext">
                 <h4>{systemeExt}</h4>
                 {titulairesExt.map((element)=>
-                <li>{element.player.name},{element.statistics[0].goals.total >= 1 ? "☀️" : ""}</li>)}
+                <li>
+                <div>{element.player.name}</div><span>{element.statistics[0].goals.total >= 1 ? ", ⚽" : ""}</span></li>)}
                 <p>Coach: {coachExt} </p>
             </ul>
 
