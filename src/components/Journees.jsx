@@ -29,7 +29,7 @@ console.log(currentIndex)
     <div className="clearfix">
            <div className="pre-button" onClick={filtragePrev} ><i class="fa-solid fa-chevron-left"></i></div>
             <div className="head-info">
-                <select onChange={setFilter(newround[index])}><option>Journee {index +1}</option></select>
+                <select onChange={setFilter(round[index])}><option>Journee {index +1}</option></select>
             </div>
             <div className="next-button" onClick={filtrageNext} ><i class="fa-solid fa-chevron-right"></i></div>
             </div>

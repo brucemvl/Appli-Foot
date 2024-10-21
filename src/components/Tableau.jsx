@@ -74,20 +74,23 @@ function Tableau({ id }) {
         return a - b;
       }
 
-const chiffre = round.map((element)=> element.slice(element.length - 2))
-const newround = chiffre.sort(compareNombres)
-const newwround= chiffre.map((element)=> element.replace( "", "Regular Season -"))
 
-    const currentIndex = newwround.indexOf(currentRound)
-    console.log(chiffre)
-    console.log(newwround)
+const currentIndex = round.findIndex(x => {
+    // Extraire le numéro après le tiret et le transformer en entier
+    const num1 = parseInt(x.split('-')[1].trim(), 10);
+    const num2 = parseInt(currentRound.split('-')[1].trim(), 10);
+    
+    return num1 === num2; // Comparer les numéros
+  });
+     
     console.log(currentRound)
     console.log(currentIndex)
+    console.log(round)
 
     return (
         <section className="calendrierEtResultats">
             <h3>Calendrier et Resultats</h3>
-            <Journees setFilter={setFilter} round={round} filter={filter} id={id} team={team} currentIndex={currentIndex} newround={newwround}/>
+            <Journees setFilter={setFilter} round={round} filter={filter} id={id} team={team} currentIndex={currentIndex} />
             <ul className="tableau">
                 {team.map(element => !filter || filter === element.league.round ?
 
