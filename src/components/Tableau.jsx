@@ -75,13 +75,11 @@ function Tableau({ id }) {
       }
 
 
-const currentIndex = round.findIndex(x => {
-    // Extraire le numéro après le tiret et le transformer en entier
-    const num1 = parseInt(x.split('-')[1].trim(), 10);
-    const num2 = parseInt(currentRound.split('-')[1].trim(), 10);
-    
-    return num1 === num2; // Comparer les numéros
-  });
+      const currentIndex = round.findIndex(x => {
+        const num1 = parseInt(x.split('-')[1]);
+        const num2 = parseInt(currentRound.split('-')[1]);
+        return num1 === num2;
+      });
      
     console.log(currentRound)
     console.log(currentIndex)

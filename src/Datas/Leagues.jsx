@@ -85,7 +85,36 @@ export const autres = [
         "logo": "https://media.api-sports.io/football/leagues/186.png",
         "flag": "https://media.api-sports.io/flags/dz.svg",
         "season": 2024,
+    },
+
+    {
+        "id": 200,
+        "name": "Botola Pro",
+        "country": "Maroc",
+        "logo": "https://media.api-sports.io/football/leagues/200.png",
+        "flag": "https://media.api-sports.io/flags/ma.svg",
+        "season": 2024,
+    },
+    
+    {
+        "id": 253,
+        "name": "MLS",
+        "country": "USA",
+        "logo": "https://media.api-sports.io/football/leagues/253.png",
+        "flag": "https://media.api-sports.io/flags/us.svg",
+        "season": 2024,
+    },
+
+    {
+        "id": 307,
+        "name": "Pro League",
+        "country": "Saudi Arabia",
+        "logo": "https://media.api-sports.io/football/leagues/307.png",
+        "flag": "https://media.api-sports.io/flags/sa.svg",
+        "season": 2024,
     }
+
+
 
 
 ]
