@@ -119,6 +119,7 @@ const tituExt = match.players[1].players.slice(0, 11)
 
 
 
+console.log(tituDom)
 
 
 
@@ -157,7 +158,7 @@ const tituExt = match.players[1].players.slice(0, 11)
                 { details ?
 <Details possession={poss} expectedGoals={xg} tirs={tirs} tirsCadres={tirsCadres} jaune={jaune} rouge={rouge} passes={passes} passesReussies={passesReussies} accuracy={accuracy} />
 :
-<Compositions titulairesDom={tituDom} titulairesExt={tituExt} coachDom={coachDom} coachExt={coachExt} systemeDom={systemeDom} systemeExt={systemeExt}/>
+<Compositions titulairesDom={tituDom} titulairesExt={tituExt} coachDom={coachDom} coachExt={coachExt} systemeDom={systemeDom} systemeExt={systemeExt} compoDom={compoDom} compoExt={compoExt}/>
            } {/* other rendering logic */}
             </section>
         </div>

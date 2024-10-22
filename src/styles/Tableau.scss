@@ -10,7 +10,6 @@
 
     .pre-button {
         color: steelblue;
-        font-size: 1.2em;
         &:hover {
             cursor: pointer;
         }
@@ -18,12 +17,20 @@
 
     .next-button {
         color: steelblue;
-        font-size: 1.2em;
         &:hover {
             cursor: pointer;
         }
 
     }
+.fa-solid {
+    font-weight: 900;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+}
 
     h3 {
         background: linear-gradient(0deg, rgb(244 240 240 / 0%) 0%, rgb(251 247 247 / 0%) 42%, rgb(255 255 255 / 21%) 99.99%, rgb(255 251 251 / 50%) 100%);

@@ -1,0 +1,50 @@
+import React, {useState, useEffect} from "react";
+
+function MyComponent() {
+
+    var myHeaders = new Headers();
+    myHeaders.append("x-rapidapi-key", "5ff22ea19db11151a018c36f7fd0213b");
+    myHeaders.append("x-rapidapi-host", "v3.football.api-sports.io");
+    
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+
+  // State to store fetched data
+  const [journee, setData] = useState();
+
+  // Effect to fetch data when the component mounts
+  useEffect(() => {
+    fetchData();
+  }, []); // Empty dependency array ensures the effect runs once on mount
+
+  // Function to fetch data
+  const fetchData = () => {
+    try {
+      // Make a GET request using the Fetch API
+      const tab = fetch("https://v3.football.api-sports.io/fixtures?league=61&season=2024", requestOptions)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+      })
+
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+    }
+    catch{}
+  }
+
+  return (
+    <div>{journee}</div>
+  )
+
+}
+export default MyComponent
